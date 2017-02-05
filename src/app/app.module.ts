@@ -4,7 +4,9 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { RegisterPage } from '../pages/register/register'
 import { TabsPage } from '../pages/tabs/tabs';
+import { Ng2MapModule } from 'ng2-map';
 
 
 @NgModule({
@@ -13,10 +15,12 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     ContactPage,
     HomePage,
+    RegisterPage,
     TabsPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    Ng2MapModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,6 +28,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     ContactPage,
     HomePage,
+    RegisterPage,
     TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]

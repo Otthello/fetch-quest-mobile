@@ -5,8 +5,21 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Please work?</h2>
+  <!-- <h2>Please work?</h2>
 
   <button ion-button (click)="getLocation()">Request for location</button>
-  <button ion-button (click)="postLocation()">Send your location</button>
+  <button ion-button (click)="postLocation()">Send your location</button> -->
+  <h1>Login</h1>
+  <form (ngSubmit)="register()">
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type ="text" [(ngModel)]="username" name="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+    <button ion-button type="submit">Login</button>
+  </form>
+  <button ion-button clear (click)="registerPage()">Register</button>
 </ion-content>
