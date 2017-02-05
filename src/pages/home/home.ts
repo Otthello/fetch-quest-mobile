@@ -33,10 +33,8 @@ export class HomePage {
     Geolocation.getCurrentPosition()
       .then(function(position){
         var jsonPosition = {
-          coords: {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
-          }
         };
         // jsonPosition = $httpParamSerializer(jsonPosition);
 

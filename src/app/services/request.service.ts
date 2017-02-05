@@ -12,63 +12,28 @@ export class RequestService{
   }
 
   getLocation(){
-    console.log("HII!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    // console.log(this.http);
     return this.http.get("http://flashy-pancake.herokuapp.com/api/v1/test/errands")
       .map(res => res.json());
   }
 
   postLocation(coordinates) {
-    console.log(this.serialize(coordinates));
-    // console.log("attempting to post");
-    // console.log(coordinates);
-    // var headers = new Headers();
-    // // headers.append("Method", 'POST');
-    // headers.append("Accept", 'application/json');
-    // headers.append('Content-Type', 'application/json' );
-    // let options = new RequestOptions({ method: 'POST', headers: headers });
-    //
-    // let postParams = coordinates;
-    // console.log("options");
-    // console.log(options);
-    // // let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    // // let options = new RequestOptions({ headers: headers });
-    // // var sendMessage = this.http.$httpParamSerializer(coordinates);
-    // // console.log(sendMessage);
-    // // this.http.post(["http://flashy-pancake.herokuapp.com/api/v1/test/errands","?latitude=",coordinates.coords.latitude,"&longitude=", coordinates.coords.longitude].join(''))
-    // this.http.post("http://flashy-pancake.herokuapp.com/api/v1/test/errands", postParams, options)
-    // .subscribe(data => {
-    //     console.log("success");
-    //     console.log("data");
-    //       console.log(data);
-    //   }, error => {
-    //     console.log("error!");
-    //     console.log(JSON.parse(error.json()));
-    //   });
-    //   // .subscribe(data => {
-    //   //     console.log("data");
-    //   //     console.log(data);
-    //   // }, error => {
-    //   //     console.log("error!");
-    //   //     console.log(JSON.parse(error.json()));
-    //   // });
-//     $http({
-//     method: 'POST',
-//     url: "http://flashy-pancake.herokuapp.com/api/v1/test/errands",
-//     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-//     transformRequest: function(obj) {
-//         var str = [];
-//         for(var p in obj)
-//         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-//         return str.join("&");
-//     },
-//     data: coordinates
-// }).success(function () {});
+    var url = "http://flashy-pancake.herokuapp.com/api/v1/test/errands";
+    var postRequest = url + "?" + this.serialize(coordinates);
+    this.http.post(postRequest)
+    .subscribe(data => {
+        console.log("success");
+        console.log("data");
+          console.log(data);
+      }, error => {
+        console.log("error!");
+        console.log(JSON.parse(error.json()));
+      });
   }
-  serialize(obj){
-    var str = [];
-    for(var p in obj)
-      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-    return str.join("&");
-  }
+  serialize(obj) {
+    var result = [];
+    for (var property in obj)
+      result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
+    return result.join("&");
+}
+
 }
