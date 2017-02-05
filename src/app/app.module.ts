@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
+import { MapPage } from '../pages/map/map';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register'
@@ -12,7 +12,7 @@ import { Ng2MapModule } from 'ng2-map';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
+    MapPage,
     ContactPage,
     HomePage,
     RegisterPage,
@@ -25,7 +25,7 @@ import { Ng2MapModule } from 'ng2-map';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
+    MapPage,
     ContactPage,
     HomePage,
     RegisterPage,
