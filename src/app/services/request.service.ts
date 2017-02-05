@@ -29,6 +29,7 @@ export class RequestService{
         console.log(JSON.parse(error.json()));
       });
   }
+
   serialize(obj) {
     var result = [];
     for (var property in obj)
