@@ -9,8 +9,9 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Your Quests</ion-list-header>
+    <button ion-button (click)="showQuestForm()">Embark on a new quest</button>
     <ion-item *ngFor="let errand of errands">
-      <ion-card>
+      <ion-card (click)="getErrandInfo(errand)">
         <img src="{{errand.npc_avatar_url}}" item-left style="width: 80px; height: 80px; float: left;" />
         <ion-card-content>
           <ion-card-title style="font-size: 12px; white-space: normal; text-align: right;">
@@ -20,6 +21,11 @@
         </ion-card-content>
       </ion-card>
     </ion-item>
+    <ion-card *ngIf="">
+      <ion-card-title>
+        Extra info
+      </ion-card-title>
+    </ion-card>
   </ion-list>
 
 </ion-content>
