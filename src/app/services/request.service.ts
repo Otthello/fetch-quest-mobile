@@ -30,6 +30,29 @@ export class RequestService{
       });
   }
 
+  getErrands(){
+    var url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
+    var options = {
+      key: "424864f710be68095339e465c0c5beb2",
+      username: "VargouilleSupreme",
+      email: "test@test.com"
+    };
+    // var headers = new Headers();
+    // headers.append("Access-Control-Allow-Headers","X-Requested-With");
+    // headers.append('Authorization', `Bearer ${"424864f710be68095339e465c0c5beb2"}`);
+    // let options2 = new RequestOptions({headers: headers});
+    // console.log(options2);
+    url = url + "?" + this.serialize(options);
+    console.log("getting errands from...");
+    console.log(url);
+    // return this.http.get("http://google.com")
+    return this.http.get(url)
+    .map(res => res.json());
+      // .subscribe(data => {
+      //   console.log(data);
+      // })
+  }
+
   serialize(obj) {
     var result = [];
     for (var property in obj)
