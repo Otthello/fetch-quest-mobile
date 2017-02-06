@@ -13,6 +13,15 @@ import { Ng2MapComponent } from 'ng2-map';
 export class MyApp {
   rootPage = TabsPage;
 
+  showLocation(){
+
+  }
+
+  getUserLocation(){
+    let lat: number, lng: number
+    navigator.geolocation
+  }
+
 
 
   constructor(platform: Platform) {

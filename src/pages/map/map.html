@@ -6,6 +6,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ng2-map [options]="mapOptions"></ng2-map>
+<ion-content>
+  <ng2-map [options]="mapOptions">
+    <marker *ngFor="let pos of positions"
+        (click)="showInfoWindow($event)"
+        [position]="pos"></marker>
+      <info-window id="iw">
+        lat: [[lat]], lng: [[lng]]
+      </info-window>
+  </ng2-map>
+  <button (click)="showRandomMarkers()">Show Random Markers</button>
 </ion-content>
