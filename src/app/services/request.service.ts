@@ -31,26 +31,28 @@ export class RequestService{
   }
 
   getErrands(){
-    var url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
-    var options = {
-      key: "424864f710be68095339e465c0c5beb2",
+    let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
+    let urlone = url;
+    let options = {
+      key: "YtTA7DMLT1WznKCL5pF7eEDk",
       username: "VargouilleSupreme",
       email: "test@test.com"
     };
-    // var headers = new Headers();
-    // headers.append("Access-Control-Allow-Headers","X-Requested-With");
+    var headers = new Headers();
+    headers.append("Access-Control-Allow-Headers","X-Requested-With");
     // headers.append('Authorization', `Bearer ${"424864f710be68095339e465c0c5beb2"}`);
     // let options2 = new RequestOptions({headers: headers});
     // console.log(options2);
     url = url + "?" + this.serialize(options);
     console.log("getting errands from...");
-    console.log(url);
-    // return this.http.get("http://google.com")
-    return this.http.get(url)
-    .map(res => res.json());
-      // .subscribe(data => {
-      //   console.log(data);
-      // })
+    console.log(urlone);
+    // console.log("google");
+    return this.http.get(url);
+
+
+    // return this.http.get(url)
+    // return this.http.get("http://flashy-pancake.herokuapp.com/api/v1/errands")
+
   }
 
   serialize(obj) {
