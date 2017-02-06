@@ -4,12 +4,15 @@ import { NavController } from 'ionic-angular';
 
 import { LocationTracker } from '../../providers/location-tracker';
 
+import { RequestService } from '../../app/services/request.service';
+
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html'
 })
 export class MapPage {
   positions: any;
+  errands: any;
   public mapOptions = {
     zoom: 10,
     mapTypeControl: false,
@@ -108,7 +111,7 @@ export class MapPage {
     ]
 };
 
-  constructor(public navCtrl: NavController, public locationTracker: LocationTracker) {
+  constructor(public navCtrl: NavController, public locationTracker: LocationTracker, private requestService: RequestService) {
 
   }
 
@@ -123,6 +126,17 @@ export class MapPage {
     this.locationTracker.stopTracking();
   }
 
-
+  ionViewWillEnter(){
+      this.errands = [];
+      var self = this;
+      var res = this.requestService.getErrands()
+      .map(res => res.json())
+      .subscribe(data => {
+        for(var i = 0, j = data.data.length;i<j; i++){
+          self.errands.push([data.data[i].lat, data.data[i].lng])
+        }
+        console.log("it's done.");
+    });
+  }
 
 }

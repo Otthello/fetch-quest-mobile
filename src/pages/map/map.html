@@ -9,13 +9,11 @@
 <ion-content>
   <ng2-map [options]="mapOptions">
     <marker *ngFor="let pos of positions"
-        (click)="showInfoWindow($event)"
         [position]="pos"></marker>
-      <info-window id="iw">
-        lat: [[lat]], lng: [[lng]]
-      </info-window>
+    <marker *ngFor="let errand of errands"
+        icon="/assets/castle.gif" [position]="errand"></marker>
   </ng2-map>
-  <button (click)="showRandomMarkers()">Show Random Markers</button>
+  <button (click)="ionViewWillEnter()">Show Random Markers</button>
   <h3>Current Latitude: {{locationTracker.lat}}</h3>
   <h3>Current Longitude: {{locationTracker.lng}}</h3>
   <button ion-button full primary (click)="start()">Start Tracking</button>
