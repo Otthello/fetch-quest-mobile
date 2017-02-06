@@ -25,6 +25,13 @@
   top: 10%;
   left: 10%;
 }
+
+.title-hack {
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+}
+
 @media not all and (min-height: 600px) and (min-width: 768px) {
   ion-modal ion-backdrop {
     visibility: visible;
