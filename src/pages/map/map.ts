@@ -9,7 +9,7 @@ import { LocationTracker } from '../../providers/location-tracker';
   templateUrl: 'map.html'
 })
 export class MapPage {
-  positions = [];
+  positions: any;
   public mapOptions = {
     zoom: 10,
     mapTypeControl: false,
@@ -113,35 +113,14 @@ export class MapPage {
   }
 
   start(){
+    this.positions = [];
+    let myLat: number, myLng: number;
     this.locationTracker.startTracking();
+    this.positions.push([this.locationTracker.lat, this.locationTracker.lng]);
   }
 
   stop(){
     this.locationTracker.stopTracking();
-  }
-
-  showRandomMarkers(){
-    let myLat: number, myLng: number;
-    this.positions = [];
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition(function(pos){
-        myLat = pos.coords.latitude;
-        myLng = pos.coords.longitude;
-        this.positions.push([myLat, myLng]);
-      })
-
-    }
-  }
-
-  showInfoWindow(marker) {
-    marker.ng2MapComponent.openInfoWindow(
-      'iw',    // id of InfoWindow
-      marker,  // anchor for InfoWindow
-      {        // local variables for InfoWindow
-        lat: marker.getPosition().lat(),
-        lng: marker.getPosition().lng(),
-      }
-    );
   }
 
 
