@@ -9,6 +9,8 @@ import { QuestPage } from '../pages/quest/quest';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Ng2MapModule } from 'ng2-map';
 import { LocationTracker } from '../providers/location-tracker';
+import { Storage } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -35,6 +37,6 @@ import { LocationTracker } from '../providers/location-tracker';
     QuestPage,
     TabsPage
   ],
-  providers: [LocationTracker, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [LocationTracker, Storage, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
