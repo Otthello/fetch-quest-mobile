@@ -9,5 +9,14 @@
 <ion-content>
   <ion-list>
     <ion-list-header>Your Quests</ion-list-header>
+    <ion-item *ngFor="let errand of errands">
+      <ion-card-content>
+        <ion-card-title>
+          {{errand.task}}
+        </ion-card-title>
+        
+      </ion-card-content>
+    </ion-item>
   </ion-list>
+
 </ion-content>
