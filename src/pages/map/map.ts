@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
+import { LocationTracker } from '../../providers/location-tracker';
+
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html'
@@ -106,17 +108,29 @@ export class MapPage {
     ]
 };
 
-showRandomMarkers(){
-  let myLat: number, myLng: number;
-  this.positions = [];
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(function(pos){
-      myLat = pos.latitude;
-      myLng = pos.longitude;
-      this.positions.push([myLat, myLng]);
-    })
+  constructor(public navCtrl: NavController, public locationTracker: LocationTracker) {
 
   }
+
+  start(){
+    this.locationTracker.startTracking();
+  }
+
+  stop(){
+    this.locationTracker.stopTracking();
+  }
+
+  showRandomMarkers(){
+    let myLat: number, myLng: number;
+    this.positions = [];
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(pos){
+        myLat = pos.coords.latitude;
+        myLng = pos.coords.longitude;
+        this.positions.push([myLat, myLng]);
+      })
+
+    }
   }
 
   showInfoWindow(marker) {
@@ -131,8 +145,5 @@ showRandomMarkers(){
   }
 
 
-  constructor(public navCtrl: NavController) {
-
-  }
 
 }
