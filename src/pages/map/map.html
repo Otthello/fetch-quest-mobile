@@ -11,7 +11,7 @@
     <marker *ngFor="let pos of positions"
         [position]="pos"></marker>
     <marker *ngFor="let errand of errands"
-        icon="color-wand" [position]="errand"></marker>
+        icon="/assets/castle.gif" [position]="errand"></marker>
   </ng2-map>
   <button (click)="ionViewWillEnter()">Show Random Markers</button>
   <h3>Current Latitude: {{locationTracker.lat}}</h3>
