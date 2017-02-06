@@ -8,6 +8,7 @@ import { RegisterPage } from '../pages/register/register';
 import { QuestPage } from '../pages/quest/quest';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Ng2MapModule } from 'ng2-map';
+import { LocationTracker } from '../providers/location-tracker';
 
 
 @NgModule({
@@ -34,6 +35,6 @@ import { Ng2MapModule } from 'ng2-map';
     QuestPage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [LocationTracker, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
