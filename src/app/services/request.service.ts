@@ -11,9 +11,8 @@ export class RequestService{
     this.http = http;
   }
 
-  getLocation(){
-    return this.http.get("http://flashy-pancake.herokuapp.com/api/v1/test/errands")
-      .map(res => res.json());
+  getLocationInfo(place_id){
+    return this.http.get("https://maps.googleapis.com/maps/api/place/details/json?placeid="+place_id+"&key=AIzaSyBavd4lIbm2bKkBHwvkMASXCQ3JHHl6FaM");
   }
 
   loginUser(credentials){
@@ -38,7 +37,6 @@ export class RequestService{
 
   getErrands(){
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
-    let urlone = url;
     let options = {
       key: "d67cd72d34986c1d7d8a42cfb7513f07",
       token: "y9sRWTJZMxrdGQV4qFAAAD9d",
@@ -47,18 +45,15 @@ export class RequestService{
     };
     var headers = new Headers();
     headers.append("Access-Control-Allow-Headers","X-Requested-With");
-    // headers.append('Authorization', `Bearer ${"424864f710be68095339e465c0c5beb2"}`);
-    // let options2 = new RequestOptions({headers: headers});
-    // console.log(options2);
     url = url + "?" + this.serialize(options);
-    console.log("getting errands from...");
-    console.log(urlone);
-    // console.log("google");
     return this.http.get(url);
 
+  }
 
-    // return this.http.get(url)
-    // return this.http.get("http://flashy-pancake.herokuapp.com/api/v1/errands")
+  postErrands(data) {
+    let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
+    url = url + "?" + this.serialize(data);
+    return this.http.post(url);
 
   }
 

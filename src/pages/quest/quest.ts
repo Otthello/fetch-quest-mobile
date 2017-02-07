@@ -13,8 +13,7 @@ export class QuestPage {
   constructor(public navCtrl: NavController, private requestService: RequestService, private alertCtrl: AlertController, private modalCtrl: ModalController) {
     // this.showQuestForm = false;
   }
-
-  ionViewWillEnter(){
+  getErrands(){
     var self = this;
     var res = this.requestService.getErrands()
     .map(res => res.json())
@@ -24,6 +23,9 @@ export class QuestPage {
       // self.errands.splice(self.errands.length - 1, 1);
       console.log(self.errands);
     });
+  }
+  ionViewWillEnter(){
+    this.getErrands();
   }
   getErrandInfo(errand){
     console.log(errand);
@@ -42,6 +44,28 @@ export class QuestPage {
   showQuestForm(){
     let modal = this.modalCtrl.create(QuestFormPage);
     modal.present();
+    modal.onDidDismiss(modalData => {
+      if(modalData == null){ return }
+      this.requestService.getLocationInfo(modalData.place_id)
+      .map(res => res.json())
+      .subscribe(locationData => {
+        var location = locationData.result.geometry.location;
+        var postData = {
+          task: modalData.task,
+          latitude: location.lat,
+          longitude: location.lng,
+          token: localStorage["token"]
+        }
+        console.log(postData);
+        this.requestService.postErrands(postData)
+        .subscribe(data => {
+            this.getErrands();
+          }, error => {
+            console.log("error!");
+            // console.log(error);
+          });
+      });
+    });
   }
 
 }
