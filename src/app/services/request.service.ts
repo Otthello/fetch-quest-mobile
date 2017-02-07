@@ -16,6 +16,21 @@ export class RequestService{
       .map(res => res.json());
   }
 
+  loginUser(credentials){
+    var url = "http://flashy-pancake.herokuapp.com/api/v1/login";
+    url = url + "?" + this.serialize(credentials);
+    this.http.post(url)
+    .subscribe(data => {
+        console.log("success");
+          console.log(data);
+          var responseToken = JSON.parse(data["_body"]);
+          localStorage.setItem("token", responseToken.token)
+      }, error => {
+        console.log("error!");
+        console.log(JSON.parse(error.json()));
+      });
+  }
+
   postLocation(coordinates) {
     var url = "http://flashy-pancake.herokuapp.com/api/v1/test/errands";
     var postRequest = url + "?" + this.serialize(coordinates);
@@ -34,7 +49,8 @@ export class RequestService{
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     let urlone = url;
     let options = {
-      key: "YtTA7DMLT1WznKCL5pF7eEDk",
+      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      token: "y9sRWTJZMxrdGQV4qFAAAD9d",
       username: "VargouilleSupreme",
       email: "test@test.com"
     };

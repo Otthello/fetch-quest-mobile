@@ -10,22 +10,25 @@ import { RegisterPage } from '../register/register'
   templateUrl: 'home.html'
 })
 export class HomePage {
-  username: string;
+  email: string;
   password: string;
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private requestService: RequestService) {
-    this.username = "";
+    this.email = "";
     this.password = "";
-  }
-
-  loginSubmit(){
-    console.log("submitted!");
-    console.log(this.username);
-    console.log(this.password);
   }
 
   registerPage(){
     console.log("hi!");
     this.navCtrl.push(RegisterPage);
+  }
+
+  login(){
+    var credentials = {
+    email: this.email,
+    password: this.password
+    }
+    this.requestService.loginUser(credentials);
+    console.log(credentials);
   }
 
   // getLocation(){

@@ -10,10 +10,10 @@
   <button ion-button (click)="getLocation()">Request for location</button>
   <button ion-button (click)="postLocation()">Send your location</button> -->
   <h1>Login</h1>
-  <form (ngSubmit)="register()">
+  <form (ngSubmit)="login()">
     <ion-item>
-      <ion-label>Username</ion-label>
-      <ion-input type ="text" [(ngModel)]="username" name="username"></ion-input>
+      <ion-label>Email</ion-label>
+      <ion-input type ="text" [(ngModel)]="email" name="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Password</ion-label>
