@@ -5,25 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <form (ngSubmit)="submitQuest()">
-    <ion-item>
-      <ion-label>Username</ion-label>
-      <ion-input type ="text" [(ngModel)]="username" name="username"></ion-input>
-    </ion-item>
-    <!-- <ion-item>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Enter address</ion-title>
-          <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-list>
-          <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
-            {{ item }}
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-item> -->
-  </form>
+    <h4 style="text-align: center;">Proclaim thy task</h4>
+    <ion-input style="background-color: #DDD; padding: 0px 15px;" type ="text" [(ngModel)]="task" name="task"></ion-input>
+
+    <h4 style="text-align: center;">Location</h4>
+    <ion-toolbar>
+        <!-- <ion-title>Enter address</ion-title> -->
+      <ion-searchbar [(ngModel)]="autocomplete.query" (ionInput)="updateSearch()"></ion-searchbar>
+    </ion-toolbar>
+    <ion-content style="height: 160px">
+      <ion-list>
+        <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+          {{ item.description }}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+    <button ion-button (click)="dismissPage()" class="embark">Embark on thou quest</button>
 </ion-content>
