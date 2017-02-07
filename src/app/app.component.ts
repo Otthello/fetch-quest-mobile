@@ -12,17 +12,10 @@ import { Ng2MapComponent } from 'ng2-map';
   templateUrl: 'app.html',
   providers: [RequestService]
 })
+
 export class MyApp {
   rootPage: any;
 
-  showLocation(){
-
-  }
-
-  getUserLocation(){
-    let lat: number, lng: number
-    navigator.geolocation
-  }
 
 
 

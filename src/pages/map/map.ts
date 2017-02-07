@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
-
-import { NavController, ViewController } from 'ionic-angular';
-
+import { Component, NgModule } from '@angular/core';
+import { NavController, PopoverController, ViewController } from 'ionic-angular';
 import { LocationTracker } from '../../providers/location-tracker';
-
 import { RequestService } from '../../app/services/request.service';
+import { PopoverPage } from './popover'
 
 @Component({
   selector: 'page-map',
@@ -111,7 +109,9 @@ export class MapPage {
     ]
 };
 
-  constructor(public navCtrl: NavController, public locationTracker: LocationTracker, private requestService: RequestService, private viewCtrl: ViewController) {
+
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, private viewCtrl: ViewController, public locationTracker: LocationTracker, private requestService: RequestService) {
+
 
   }
 
@@ -126,17 +126,29 @@ export class MapPage {
     this.locationTracker.stopTracking();
   }
 
+  showInfoPane(myEvent){
+    console.log(myEvent);
+    let revealPopover = this.popoverCtrl.create(PopoverPage,myEvent);
+
+    revealPopover.present();
+  }
+
   ionViewWillEnter(){
       this.viewCtrl.showBackButton(false);
       this.errands = [];
+
       var self = this;
-      var res = this.requestService.getErrands()
+      var res = this.requestService.getErrandLocations()
       .map(res => res.json())
       .subscribe(data => {
         for(var i = 0, j = data.data.length;i<j; i++){
-          self.errands.push([data.data[i].lat, data.data[i].lng])
+          self.errands.push({
+            coords: [data.data[i].lat, data.data[i].lng],
+            thumbnail: data.data[i].npc_thumb,
+            hook: data.data[i].hook
+          });
         }
-        console.log("it's done.");
+        console.log("it is done.");
     });
   }
 
