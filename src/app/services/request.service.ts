@@ -71,6 +71,22 @@ export class RequestService{
 
   }
 
+  getErrandLocations(){
+    let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
+    let options = {
+      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      token: "y9sRWTJZMxrdGQV4qFAAAD9d",
+      options: "location"
+    };
+
+    var headers = new Headers();
+    headers.append("Access-Control-Allow-Headers","X-Requested-With");
+
+    url += "?" + this.serialize(options);
+    console.log("getting errands from...");
+    return this.http.get(url);
+  }
+
   serialize(obj) {
     var result = [];
     for (var property in obj)
