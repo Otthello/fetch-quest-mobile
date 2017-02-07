@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { QuestPage } from '../pages/quest/quest';
 import { QuestFormPage } from '../pages/quest_form/quest_form';
+import { AvatarPage } from '../pages/avatar/avatar';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Ng2MapModule } from 'ng2-map';
 import { LocationTracker } from '../providers/location-tracker';
@@ -23,6 +24,7 @@ import { Storage } from '@ionic/storage';
     RegisterPage,
     QuestPage,
     QuestFormPage,
+    AvatarPage,
     TabsPage
   ],
   imports: [
@@ -38,6 +40,7 @@ import { Storage } from '@ionic/storage';
     RegisterPage,
     QuestPage,
     QuestFormPage,
+    AvatarPage,
     TabsPage
   ],
   providers: [LocationTracker, Storage, {provide: ErrorHandler, useClass: IonicErrorHandler}]

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 import { RequestService } from '../../app/services/request.service';
 import { AlertController } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
 import { RegisterPage } from '../register/register'
-import { MapPage } from '../map/map';
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +15,7 @@ export class HomePage {
   password: string;
   tabBarElement: any;
   showErrors: boolean;
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private requestService: RequestService) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private requestService: RequestService, private viewCtrl: ViewController ) {
     this.email = "";
     this.password = "";
     this.showErrors = false;
@@ -24,9 +24,8 @@ export class HomePage {
     console.log(this.tabBarElement);
   }
   ionViewWillEnter(){
-    console.log(this.tabBarElement.style.display);
-    console.log("settings as none");
     this.tabBarElement.style.display = 'none';
+    this.viewCtrl.showBackButton(false);
   }
 
   ionViewWillLeave(){
@@ -50,7 +49,7 @@ export class HomePage {
         // console.log(data);
         var responseToken = JSON.parse(data["_body"]);
         localStorage.setItem("token", responseToken.token);
-        this.navCtrl.push(MapPage);
+        this.navCtrl.push(TabsPage);
       }, error => {
         // console.log("error!");
         // console.log(error);
