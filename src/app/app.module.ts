@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { QuestPage } from '../pages/quest/quest';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PopoverPage } from '../pages/map/popover';
 import { Ng2MapModule } from 'ng2-map';
 import { LocationTracker } from '../providers/location-tracker';
 
@@ -19,7 +20,8 @@ import { LocationTracker } from '../providers/location-tracker';
     HomePage,
     RegisterPage,
     QuestPage,
-    TabsPage
+    TabsPage,
+    PopoverPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -33,7 +35,8 @@ import { LocationTracker } from '../providers/location-tracker';
     HomePage,
     RegisterPage,
     QuestPage,
-    TabsPage
+    TabsPage,
+    PopoverPage
   ],
   providers: [LocationTracker, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
