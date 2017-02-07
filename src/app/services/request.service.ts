@@ -22,8 +22,14 @@ export class RequestService{
     return this.http.post(url);
   }
 
+  registerUser(userInfo){
+    var url = "http://flashy-pancake.herokuapp.com/api/v1/users";
+    url = url + "?" + this.serialize(userInfo);
+    return this.http.post(url)
+  }
+
   postLocation(coordinates) {
-    var url = "http://flashy-pancake.herokuapp.com/api/v1/test/errands";
+    var url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     var postRequest = url + "?" + this.serialize(coordinates);
     this.http.post(postRequest)
     .subscribe(data => {
