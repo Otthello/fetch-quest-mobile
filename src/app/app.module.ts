@@ -25,7 +25,7 @@ import { Storage } from '@ionic/storage';
     RegisterPage,
     QuestPage,
     TabsPage,
-    PopoverPage
+    PopoverPage,
     QuestFormPage,
     AvatarPage
 
@@ -42,7 +42,7 @@ import { Storage } from '@ionic/storage';
     HomePage,
     RegisterPage,
     QuestPage,
-    PopoverPage
+    PopoverPage,
     QuestFormPage,
     AvatarPage,
     TabsPage
