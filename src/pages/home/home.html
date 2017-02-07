@@ -9,6 +9,7 @@
 
   <button ion-button (click)="getLocation()">Request for location</button>
   <button ion-button (click)="postLocation()">Send your location</button> -->
+  <p *ngIf="showErrors">Incorrect username or password!</p>
   <h1>Login</h1>
   <form (ngSubmit)="login()">
     <ion-item>

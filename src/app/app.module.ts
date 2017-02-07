@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { QuestPage } from '../pages/quest/quest';
 import { QuestFormPage } from '../pages/quest_form/quest_form';
+import { AvatarPage } from '../pages/avatar/avatar';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PopoverPage } from '../pages/map/popover';
 import { Ng2MapModule } from 'ng2-map';
@@ -26,6 +27,7 @@ import { Storage } from '@ionic/storage';
     TabsPage,
     PopoverPage
     QuestFormPage,
+    AvatarPage
 
   ],
   imports: [
@@ -42,6 +44,7 @@ import { Storage } from '@ionic/storage';
     QuestPage,
     PopoverPage
     QuestFormPage,
+    AvatarPage,
     TabsPage
   ],
   providers: [LocationTracker, Storage, {provide: ErrorHandler, useClass: IonicErrorHandler}]

@@ -1,11 +1,7 @@
 import { Component, NgModule } from '@angular/core';
-
-import { NavController, PopoverController } from 'ionic-angular';
-
+import { NavController, PopoverController, ViewController } from 'ionic-angular';
 import { LocationTracker } from '../../providers/location-tracker';
-
 import { RequestService } from '../../app/services/request.service';
-
 import { PopoverPage } from './popover'
 
 @Component({
@@ -113,7 +109,9 @@ export class MapPage {
     ]
 };
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public locationTracker: LocationTracker, private requestService: RequestService) {
+
+  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, private viewCtrl: ViewController, public locationTracker: LocationTracker, private requestService: RequestService) {
+
 
   }
 
@@ -136,7 +134,7 @@ export class MapPage {
   }
 
   ionViewWillEnter(){
-
+      this.viewCtrl.showBackButton(false);
       this.errands = [];
 
       var self = this;
