@@ -19,16 +19,7 @@ export class RequestService{
   loginUser(credentials){
     var url = "http://flashy-pancake.herokuapp.com/api/v1/login";
     url = url + "?" + this.serialize(credentials);
-    this.http.post(url)
-    .subscribe(data => {
-        console.log("success");
-          console.log(data);
-          var responseToken = JSON.parse(data["_body"]);
-          localStorage.setItem("token", responseToken.token)
-      }, error => {
-        console.log("error!");
-        console.log(JSON.parse(error.json()));
-      });
+    return this.http.post(url);
   }
 
   postLocation(coordinates) {
@@ -38,10 +29,10 @@ export class RequestService{
     .subscribe(data => {
         console.log("success");
         console.log("data");
-          console.log(data);
+        console.log(data);
       }, error => {
         console.log("error!");
-        console.log(JSON.parse(error.json()));
+        // console.log(error);
       });
   }
 

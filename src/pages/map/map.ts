@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 
 import { LocationTracker } from '../../providers/location-tracker';
 
@@ -111,7 +111,7 @@ export class MapPage {
     ]
 };
 
-  constructor(public navCtrl: NavController, public locationTracker: LocationTracker, private requestService: RequestService) {
+  constructor(public navCtrl: NavController, public locationTracker: LocationTracker, private requestService: RequestService, private viewCtrl: ViewController) {
 
   }
 
@@ -127,6 +127,7 @@ export class MapPage {
   }
 
   ionViewWillEnter(){
+      this.viewCtrl.showBackButton(false);
       this.errands = [];
       var self = this;
       var res = this.requestService.getErrands()

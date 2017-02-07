@@ -14,7 +14,5 @@ export class TabsPage {
   tab2Root: any = MapPage;
   tab3Root: any = QuestPage;
 
-  constructor() {
-
-  }
+  constructor() {}
 }
