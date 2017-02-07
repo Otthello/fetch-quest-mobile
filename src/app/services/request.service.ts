@@ -79,6 +79,20 @@ export class RequestService{
     return this.http.get(url);
   }
 
+  getEquips(){
+    let url = "http://flashy-pancake.herokuapp.com/api/v1/equips";
+    let options = {
+      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      token: localStorage["token"],
+      username: "VargouilleSupreme",
+      email: "test@test.com"
+  };
+    var headers = new Headers();
+    headers.append("Access-Control-Allow-Headers","X-Requested-With");
+    url = url + "?" + this.serialize(options);
+    return this.http.get(url);
+}
+
   serialize(obj) {
     var result = [];
     for (var property in obj)
