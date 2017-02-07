@@ -43,7 +43,7 @@ export class RegisterPage {
         var responseToken = JSON.parse(data["_body"]);
         console.log(responseToken)
         localStorage.setItem("token", responseToken.token);
-        // this.navCtrl.push(TabsPage);
+        this.navCtrl.push(TabsPage);
       }, error => {
         // console.log("error!");
         // console.log(error);
