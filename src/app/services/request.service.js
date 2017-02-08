@@ -20,7 +20,7 @@ var RequestService = (function () {
     };
     RequestService.prototype.loginUser = function (credentials) {
         var url = "http://flashy-pancake.herokuapp.com/api/v1/login";
-        url = url + "?" + this.serialize(credentials);
+        url = url + "?" + this.serialize(credentials) + "&key=d67cd72d34986c1d7d8a42cfb7513f07";
         return this.http.post(url);
     };
     RequestService.prototype.registerUser = function (userInfo) {
@@ -62,7 +62,7 @@ var RequestService = (function () {
         var url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
         var options = {
             key: "d67cd72d34986c1d7d8a42cfb7513f07",
-            token: "y9sRWTJZMxrdGQV4qFAAAD9d",
+            token: localStorage["token"],
             options: "location"
         };
         var headers = new http_1.Headers();

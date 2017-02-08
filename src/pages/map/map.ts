@@ -148,6 +148,7 @@ export class MapPage {
             hook: data.data[i].hook
           });
         }
+        localStorage.setItem("markers",JSON.stringify(self.errands));
         console.log("it is done.");
     });
   }

@@ -1,18 +1,29 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Geolocation, Geoposition, BackgroundGeolocation } from 'ionic-native';
+import { StorageService } from '../app/services/storage.service';
+import { CheckMarkers } from './check-markers';
 import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class LocationTracker {
-
+  private myArray: any;
+  // public checkCount: number = 0;
   public watch:any;
   public lat: number = 0;
   public lng: number = 0;
+  // public observable: any;
+  // protected storageService: StorageService;
+  constructor(public zone: NgZone, private storageService: StorageService, private checkMarker: CheckMarkers) { //,
+    console.log("subscribing");
+    this.storageService.collection$.subscribe(latestCollection => {
+      this.myArray = latestCollection;
+    });
+    this.storageService.load();
 
-  constructor(public zone: NgZone) {
-    console.log('Hello LocationTracker Provider');
   }
-
+  // ngOnInit() {
+  //
+  // }
   startTracking(){
     let config = {
       desiredAccuracy: 0,
@@ -26,6 +37,8 @@ export class LocationTracker {
       console.log('BackgroundGeolocation:   ' + location.latitude + "," + location.longitude);
 
       this.zone.run(() => {
+        // console.log("CHECKING YOUR LOCATION");
+
         this.lat = location.latitude;
         this.lng = location.longitude;
       });
@@ -49,8 +62,13 @@ export class LocationTracker {
       console.log(position);
 
       this.zone.run(() => {
+        console.log("CHECKING YOUR LOCATION");
+        // this.checkCount++;
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        // data = position.coords.latitude, position.coords.longitude};
+        // this.storageService.load();
+        this.storageService.replace([this.lat, this.lng]);
       });
 
 

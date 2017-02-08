@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { RequestService } from './services/request.service';
+import { StorageService } from './services/storage.service';
 import { TabsPage } from '../pages/tabs/tabs';
 // import { MapPage } from '../pages/map/map';
 import { HomePage } from '../pages/home/home';
@@ -15,9 +16,6 @@ import { Ng2MapComponent } from 'ng2-map';
 
 export class MyApp {
   rootPage: any;
-
-
-
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
