@@ -24,8 +24,9 @@ export class AvatarPage {
     })
   }
   ionViewWillEnter(){
-  this.getEquips();
+    this.getEquips()
   }
+
 
   logoutUser(){
     localStorage.removeItem("token");
