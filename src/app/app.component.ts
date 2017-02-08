@@ -13,11 +13,13 @@ import { Ng2MapComponent } from 'ng2-map';
   templateUrl: 'app.html',
   providers: [RequestService]
 })
-
+//  import this for notifications!!
+// 	ionic plugin add de.appplant.cordova.plugin.local-notification
 export class MyApp {
   rootPage: any;
 
   constructor(platform: Platform) {
+    // localStorage.removeItem("markers");
     platform.ready().then(() => {
       Ng2MapComponent['apiUrl']= 'https://maps.google.com/maps/api/js?key=AIzaSyBavd4lIbm2bKkBHwvkMASXCQ3JHHl6FaM';
       // Okay, so the platform is ready and our plugins are available.

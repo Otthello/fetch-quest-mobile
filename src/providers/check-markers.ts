@@ -1,23 +1,63 @@
 import { Injectable } from '@angular/core';
 // import { Geolocation, Geoposition, BackgroundGeolocation } from 'ionic-native';
+import { NavController, AlertController } from 'ionic-angular';
+import { RequestService } from '../app/services/request.service';
 import { StorageService } from '../app/services/storage.service';
 import { LocationTracker } from './location-tracker';
+import { LocalNotifications } from 'ionic-native';
 import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class CheckMarkers {
+  static readonly DISTANCE_THRESHOLD = 200; // in meters
   private coords: any;
   private markers: any;
-  constructor(private storageService: StorageService){
+  constructor(
+    private requestService: RequestService,
+    private storageService: StorageService,
+    private alertCtrl: AlertController
+  )
+  {
+    LocalNotifications.on("click", (notification, state) => {
+      let alert = this.alertCtrl.create({
+        title: "Notification Clicked",
+        subTitle: "You just clicked the scheduled notification",
+        buttons: ["OK"]
+      });
+      alert.present();
+    });
     console.log("subscribing");
     var self = this;
     this.storageService.collection$.subscribe(latestCollection => {
       self.coords = latestCollection;
       console.log(latestCollection);
       console.log("******************************CHANGED!**************************************");
-      self.markers = JSON.parse(localStorage["markers"]);
-      console.log(self.markers);
-      self.checkMarkers();
+      if(localStorage["markers"] != null){
+        self.markers = JSON.parse(localStorage["markers"]);
+        console.log(self.markers);
+        self.checkMarkers();
+      }
+    });
+  }
+  completeErrand(marker){
+    let alert = this.alertCtrl.create({
+      title: "You just completed:",
+      subTitle: marker.hook,
+      buttons: ["Claim thou reward"]
+    });
+    alert.present();
+    alert.onDidDismiss(() => {
+      console.log("hi");
+    });
+    this.scheduleNotification(marker);
+  }
+
+  scheduleNotification(marker){
+    LocalNotifications.schedule({
+      title: "Test Title",
+      text: "Delayed Notification",
+      at: new Date(new Date().getTime() + 5 * 1000),
+      sound: null
     });
   }
 
@@ -28,20 +68,12 @@ export class CheckMarkers {
       var lat = parseFloat(this.markers[i].coords[0]);
       var lng = parseFloat(this.markers[i].coords[1]);
       var markerPosition = {lat: lat, lng: lng};
-      // console.log("latC: " + this.coords[0]);
-      // console.log("lngC: " + this.coords[1]);
-      // console.log("latM: " + lat);
-      // console.log("lngM: "+ lng);
-      // var markerPosition = new google.maps.LatLng(parseInt(lat), parseInt(lng));
-      // console.log(currentPosition);
-      // console.log(markerPosition);
-      // console.log("currentPos: ");
-      console.log(currentPosition);
-      // console.log("markerPos: ");
-      console.log(markerPosition);
       var distance = this.getDistance(currentPosition, markerPosition);
-      // var distance = google.maps.geometry.spherical.computeDistanceBetween(currentPosition, markerPosition);
       console.log("distance: " + distance);
+      if(distance < CheckMarkers.DISTANCE_THRESHOLD){
+        this.completeErrand(this.markers[i]);
+        return;
+      }
     }
   }
 
@@ -59,6 +91,7 @@ export class CheckMarkers {
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c;
     return d; // returns the distance in meter
-};
-
+  };
 }
+
+// need to get the errand id to update from the server upon requesting for errands

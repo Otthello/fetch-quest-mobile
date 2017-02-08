@@ -15,6 +15,7 @@ import { LocationTracker } from '../providers/location-tracker';
 import { CheckMarkers } from '../providers/check-markers';
 import { Storage } from '@ionic/storage';
 import { StorageService } from './services/storage.service';
+import { RequestService } from './services/request.service';
 
 
 
@@ -49,6 +50,6 @@ import { StorageService } from './services/storage.service';
     AvatarPage,
     TabsPage
   ],
-  providers: [LocationTracker, Storage, StorageService, CheckMarkers, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [LocationTracker, Storage, StorageService, RequestService, CheckMarkers, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}

@@ -110,7 +110,13 @@ export class MapPage {
 };
 
 
-  constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, private viewCtrl: ViewController, public locationTracker: LocationTracker, private requestService: RequestService) {
+  constructor(
+    public navCtrl: NavController,
+    public popoverCtrl: PopoverController,
+    private viewCtrl: ViewController,
+    public locationTracker: LocationTracker,
+    private requestService: RequestService
+  ) {
 
 
   }
@@ -138,11 +144,15 @@ export class MapPage {
       this.errands = [];
 
       var self = this;
+      console.log("******************REQUESTING GET ERRAND LOCATIONS********************");
       var res = this.requestService.getErrandLocations()
       .map(res => res.json())
       .subscribe(data => {
+        console.log("**********************GET ERRAND LOCATIONS***********************")
+        console.log(data);
         for(var i = 0, j = data.data.length;i<j; i++){
           self.errands.push({
+            errand_id: data.data[i].id,
             coords: [data.data[i].lat, data.data[i].lng],
             thumbnail: data.data[i].npc_thumb,
             hook: data.data[i].hook

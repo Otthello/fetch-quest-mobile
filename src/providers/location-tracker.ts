@@ -14,16 +14,13 @@ export class LocationTracker {
   // public observable: any;
   // protected storageService: StorageService;
   constructor(public zone: NgZone, private storageService: StorageService, private checkMarker: CheckMarkers) { //,
-    console.log("subscribing");
     this.storageService.collection$.subscribe(latestCollection => {
       this.myArray = latestCollection;
     });
     this.storageService.load();
 
   }
-  // ngOnInit() {
-  //
-  // }
+
   startTracking(){
     let config = {
       desiredAccuracy: 0,
