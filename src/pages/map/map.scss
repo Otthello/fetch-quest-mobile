@@ -8,42 +8,19 @@ popover-half {
 }
 
 
-
 $spriteWidth:64px;
 $spriteHeight:64px;
 
 
 
-@mixin animation($params) {
-    -webkit-animation:$params;
-    -moz-animation:$params;
-    -ms-animation:$params;
-    animation:$params;
-}
-
-@mixin keyframes($animName) {
-    @-webkit-keyframes $animName { @content }
-    @-moz-keyframes    $animName { @content }
-    @-ms-keyframes     $animName { @content }
-    @keyframes         $animName { @content }
-}
-
-@mixin anim($animName, $steps, $animNbr, $animParams){
-    .#{$animName} {
-        @content;
-        @include animation($animName steps($steps) $animParams);
-    }
-    @include keyframes($animName) {
-        0% { background-position:0px (-$spriteHeight * ($animNbr - 1)); }
-        100% { background-position:-($spriteWidth * $steps) (-$spriteHeight * ($animNbr - 1)); }
-    }
-}
-
-marker[icon^="../../assets/avatar_sprite_sheet.png"]{
+.avatar{
   position:absolute;
   width: $spriteWidth;
   height:$spriteHeight;
-  .walk-south {
+  background-image: url("../../assets/avatar_sprite_sheet.png");
+  }
+
+.walk-south {
   -webkit-animation: walk-south steps(9) 0.5s infinite;
   animation: walk-south steps(9) 0.5s infinite;
 }
@@ -64,6 +41,5 @@ marker[icon^="../../assets/avatar_sprite_sheet.png"]{
   100% {
     background-position: -576px -128px;
   }
-}
 
 }

@@ -8,8 +8,8 @@
 
 <ion-content>
   <ng2-map [options]="mapOptions">
-    <marker *ngFor="let pos of positions"
-         class="avatar walk-south " icon="../../assets/avatar_sprite_sheet.png"[position]="pos"></marker>
+    <custom-marker *ngFor="let pos of positions"
+          [position]="pos"><div class="avatar walk-south"></div></custom-marker>
     <marker *ngFor="let errand of errands"
         icon="/assets/castle.gif" [position]="errand.coords" (click)="showInfoPane(errand)">
     </marker>
@@ -19,6 +19,7 @@
   <button ion-button full primary (click)="start()">Start Tracking</button>
   <button ion-button full primary (click)="stop()">Stop Tracking</button>
   <button ion-button icon-only (click)="showInfoPane($event)">
+
   <ion-icon name="more"></ion-icon>
 </button>
 </ion-content>
