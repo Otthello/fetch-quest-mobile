@@ -1,8 +1,51 @@
 page-about {
 
 }
-
+.long-map{
+  height: 427px;
+}
 popover-half {
   max-height: 30%;
   width: 200px;
+}
+
+$spriteWidth:64px;
+$spriteHeight:64px;
+
+
+.skelly{
+  background-image: url("../../assets/skelly.png");
+  width: 36px;
+  height: 40px;
+}
+
+.avatar{
+  position:absolute;
+  width: $spriteWidth;
+  height:$spriteHeight;
+  background-image: url("../../assets/avatar_sprite_sheet.png");
+  }
+
+.walk-south {
+  -webkit-animation: walk-south steps(9) 0.5s infinite;
+  animation: walk-south steps(9) 0.5s infinite;
+}
+
+@-webkit-keyframes walk-south {
+  0% {
+    background-position: 0px -128px;
+  }
+  100% {
+    background-position: -576px -128px;
+  }
+}
+
+@keyframes walk-south {
+  0% {
+    background-position: 0px -128px;
+  }
+  100% {
+    background-position: -576px -128px;
+  }
+
 }
