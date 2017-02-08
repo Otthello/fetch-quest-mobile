@@ -14,6 +14,7 @@
         [icon]="errand.icon" [position]="errand.coords" (click)="showInfoPane(errand)">
     </marker>
   </ng2-map>
+
   <p><span>Current Latitude: {{locationTracker.lat}}</span>
   <span>Current Longitude: {{locationTracker.lng}}</span></p>
   <button ion-button primary (click)="start()">Start Tracking</button>

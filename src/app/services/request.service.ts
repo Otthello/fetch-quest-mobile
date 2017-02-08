@@ -17,7 +17,7 @@ export class RequestService{
 
   loginUser(credentials){
     var url = "http://flashy-pancake.herokuapp.com/api/v1/login";
-    url = url + "?" + this.serialize(credentials);
+    url = url + "?" + this.serialize(credentials) + "&key=d67cd72d34986c1d7d8a42cfb7513f07";
     return this.http.post(url);
   }
 
@@ -67,7 +67,7 @@ export class RequestService{
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     let options = {
       key: "d67cd72d34986c1d7d8a42cfb7513f07",
-      token: "y9sRWTJZMxrdGQV4qFAAAD9d",
+      token: localStorage["token"],
       options: "location"
     };
 

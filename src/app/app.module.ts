@@ -12,7 +12,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PopoverPage } from '../pages/map/popover';
 import { Ng2MapModule } from 'ng2-map';
 import { LocationTracker } from '../providers/location-tracker';
+import { CheckMarkers } from '../providers/check-markers';
 import { Storage } from '@ionic/storage';
+import { StorageService } from './services/storage.service';
+import { RequestService } from './services/request.service';
 
 
 
@@ -47,6 +50,6 @@ import { Storage } from '@ionic/storage';
     AvatarPage,
     TabsPage
   ],
-  providers: [LocationTracker, Storage, {provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [LocationTracker, Storage, StorageService, RequestService, CheckMarkers, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
