@@ -9,7 +9,7 @@
 <ion-content>
   <ng2-map [options]="mapOptions">
     <marker *ngFor="let pos of positions"
-        [position]="pos"></marker>
+         class="avatar walk-south " icon="../../assets/avatar_sprite_sheet.png"[position]="pos"></marker>
     <marker *ngFor="let errand of errands"
         icon="/assets/castle.gif" [position]="errand.coords" (click)="showInfoPane(errand)">
     </marker>
