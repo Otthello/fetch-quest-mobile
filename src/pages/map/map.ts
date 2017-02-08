@@ -12,10 +12,11 @@ export class MapPage {
   positions: any;
   errands: any;
   public mapOptions = {
-    zoom: 10,
+    zoom: 9,
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: false,
+    zoomControl: false,
     styles: [
       {
         elementType: "labels",
@@ -112,7 +113,6 @@ export class MapPage {
 
   constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, private viewCtrl: ViewController, public locationTracker: LocationTracker, private requestService: RequestService) {
 
-
   }
 
   start(){
@@ -133,10 +133,28 @@ export class MapPage {
     revealPopover.present();
   }
 
+
+  randomIcon(){
+    let randomAsset: number;
+    var iconUrls = [
+    "../../assets/castle.gif",
+    "http://i.imgur.com/kCAUq0E.png",
+    "http://i.imgur.com/QhEzDuK.png",
+    "http://i.imgur.com/1tjHokx.png",
+    "http://i.imgur.com/Vow5Cv0.png",
+    "http://i.imgur.com/P0FPPZu.png",
+    "http://i.imgur.com/ZqoiYZL.png"
+    ]
+    randomAsset = Math.floor(Math.random() * 7);
+    return iconUrls[randomAsset];
+  }
+
   ionViewWillEnter(){
+      this.start();
+      this.stop();
+      this.start();
       this.viewCtrl.showBackButton(false);
       this.errands = [];
-
       var self = this;
       var res = this.requestService.getErrandLocations()
       .map(res => res.json())
@@ -145,10 +163,10 @@ export class MapPage {
           self.errands.push({
             coords: [data.data[i].lat, data.data[i].lng],
             thumbnail: data.data[i].npc_thumb,
-            hook: data.data[i].hook
+            hook: data.data[i].hook,
+            icon: self.randomIcon()
           });
         }
-        console.log("it is done.");
     });
   }
 

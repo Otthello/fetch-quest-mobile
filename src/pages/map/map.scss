@@ -1,17 +1,23 @@
 page-about {
 
 }
-
+.long-map{
+  height: 427px;
+}
 popover-half {
   max-height: 30%;
   width: 200px;
 }
 
-
 $spriteWidth:64px;
 $spriteHeight:64px;
 
 
+.skelly{
+  background-image: url("../../assets/skelly.png");
+  width: 36px;
+  height: 40px;
+}
 
 .avatar{
   position:absolute;
