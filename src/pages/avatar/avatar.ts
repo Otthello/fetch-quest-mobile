@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RequestService } from '../../app/services/request.service';
+import { HomePage } from '../home/home';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -22,9 +23,12 @@ export class AvatarPage {
       console.log(this.equips)
     })
   }
+  ionViewWillEnter(){
+  this.getEquips();
+  }
 
   logoutUser(){
     localStorage.removeItem("token");
-    // this.navCtrl.push(avatarPage);
+    this.navCtrl.push(HomePage);
   }
 }
