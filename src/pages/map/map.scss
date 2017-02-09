@@ -1,6 +1,19 @@
 page-about {
 
 }
+.map-button{
+  margin-top: 1em;
+  background-color: transparent;
+  font-size: 1.2em;
+  margin-left: 1em;
+  border: 1px dotted black;
+  border-radius: 10px;
+}
+
+.map-button:hover{
+  font-size: 1.3em
+}
+
 .long-map{
   height: 427px;
   width: 90%;
