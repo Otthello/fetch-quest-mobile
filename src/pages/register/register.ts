@@ -4,7 +4,6 @@ import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { TabsPage} from '../tabs/tabs';
 import { RequestService } from '../../app/services/request.service';
-import { Geolocation } from 'ionic-native';
 
 @Component({
   selector: 'page-register',
@@ -18,7 +17,7 @@ export class RegisterPage {
   passwordConfirm: string;
   incorrectPassword: boolean;
 
-  constructor(public navCtrl: NavController, private requestService: RequestService) { // what are all these options
+  constructor(public navCtrl: NavController, private requestService: RequestService) {
     this.username = "";
     this.email = "";
     this.avatar = "";

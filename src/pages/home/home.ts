@@ -15,7 +15,13 @@ export class HomePage {
   password: string;
   tabBarElement: any;
   showErrors: boolean;
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private requestService: RequestService, private viewCtrl: ViewController ) {
+  constructor(
+    public navCtrl: NavController,
+    public alertCtrl: AlertController,
+    private requestService: RequestService,
+    private viewCtrl: ViewController
+  )
+  {
     this.email = "";
     this.password = "";
     this.showErrors = false;

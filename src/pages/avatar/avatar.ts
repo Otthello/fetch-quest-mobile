@@ -83,6 +83,7 @@ export class AvatarPage {
 
   logoutUser(){
     localStorage.removeItem("token");
+    localStorage.removeItem("markers");
     this.navCtrl.push(HomePage);
   }
 }
