@@ -57,16 +57,6 @@
   z-index: 2;
 }
 
-#bootyR {
-  height: 65px;
-  width: 45px;
-  border: 3px dotted orange;
-  position: relative;
-  right: 115px;
-  top: 390px;
-  z-index: 2;
-}
-
 #bootyL {
   height: 65px;
   width: 45px;
@@ -75,6 +65,16 @@
   right: 141px;
   top: 390px;
   transform: scale(-1, 1);
+  z-index: 2;
+}
+
+#bootyR {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  right: 115px;
+  top: 390px;
   z-index: 2;
 }
 

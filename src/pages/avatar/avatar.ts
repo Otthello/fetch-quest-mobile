@@ -11,23 +11,25 @@ import { NavController, ModalController, Alert } from 'ionic-angular';
 })
 export class AvatarPage {
     equips: any;
-    equipType: string;
-    currentEquip: any;
+    slot: any;
+    currentEquips: any;
     availableEquips: any;
     startingIndex: number;
 
   constructor(public navCtrl: NavController, private requestService: RequestService) {
       console.log("hi from avatar page");
-      this.startingIndex = 0;
       this.equips = [];
       this.availableEquips = [];
-      this.equipType;
+      this.startingIndex = 0;
+      this.currentEquips = [];
 
   }
 
   setItem(equip){
-    this.currentEquip = equip;
-    localStorage.setItem("currentEquip", JSON.stringify(equip));
+    console.log("EQUIPPING!");
+    console.log(equip);
+    this.currentEquips[equip.slot - 1] = equip;
+    localStorage.setItem("currentEquips", JSON.stringify(this.currentEquips));
   }
 
   moveUp(){
@@ -72,17 +74,19 @@ export class AvatarPage {
         this.availableEquips.push(this.equips[i]);
         i++;
       }
-      if(localStorage["currentEquip"] == null && this.equips.length > 0){
-        console.log(this.equips[0]);
-        console.log(JSON.stringify(this.equips[0]));
-        localStorage.setItem("currentEquip", JSON.stringify(this.equips[0]));
+      // if(localStorage["currentEquips"] == null && this.equips.length > 0){
+      //   console.log(this.equips[0]);
+      //   console.log(JSON.stringify(this.equips[0]));
+      //   localStorage.setItem("currentEquips", JSON.stringify(this.equips[0]));
+      // }
+      if(localStorage["currentEquips"] != null && this.equips.length > 0){
+        this.currentEquips = JSON.parse(localStorage["currentEquips"]);
       }
-      if(this.equips.length > 0){
-        this.currentEquip = JSON.parse(localStorage["currentEquip"]);
-      }
+      console.log("RECEIVED EQUIPS");
     })
   }
   ionViewWillEnter(){
+    console.log("ENTERING");
     this.getEquips()
   }
 
