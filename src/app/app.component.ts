@@ -11,7 +11,7 @@ import { Ng2MapComponent } from 'ng2-map';
 
 @Component({
   templateUrl: 'app.html',
-  providers: [RequestService]
+  providers: [RequestService],
 })
 //  import this for notifications!!
 // 	ionic plugin add de.appplant.cordova.plugin.local-notification
@@ -20,8 +20,8 @@ export class MyApp {
 
   constructor(platform: Platform) {
     this.rootPage = TabsPage;
-    if(localStorage["token"] == null){
       this.rootPage = HomePage;
+    if(localStorage["token"] == null){
     }
     // if(localStorage["markers"]){ localStorage.removeItem("markers"); }
     platform.ready().then(() => {
