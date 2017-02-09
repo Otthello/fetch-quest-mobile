@@ -1,15 +1,14 @@
+<ion-content padding class="fq-book-cover">
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Register
+      Registration
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <h1>Register</h1>
   <ion-list>
     <ion-list-header *ngIf="incorrectPassword == true">Passwords do not match!</ion-list-header>
+    <div class="fq-banner"></div>
     <form (ngSubmit)="registerSubmit()">
       <ion-item>
         <ion-label>Username</ion-label>

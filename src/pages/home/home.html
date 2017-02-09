@@ -1,16 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="fq-book-cover">
   <!-- <h2>Please work?</h2>
-
   <button ion-button (click)="getLocation()">Request for location</button>
   <button ion-button (click)="postLocation()">Send your location</button> -->
   <p *ngIf="showErrors">Incorrect username or password!</p>
-  <h1>Login</h1>
+  <div class="fq-banner"></div>
   <form (ngSubmit)="login()">
     <ion-item>
       <ion-label>Email</ion-label>
