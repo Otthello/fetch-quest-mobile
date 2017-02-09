@@ -14,6 +14,8 @@
         [icon]="errand.icon" [position]="errand.coords" (click)="showInfoPane(errand)">
     </marker>
   </ng2-map>
-  <button class="map-button" (click)="start()">Adventure's afoot!</button>
-  <button class="map-button" (click)="stop()">Leave me in peace</button>
+  <p><span>Current Latitude: {{locationTracker.lat}}</span>
+  <span>Current Longitude: {{locationTracker.lng}}</span></p>
+  <button (click)="start()" class="button-styling" >Start Tracking</button>
+  <button (click)="stop()" class="button-styling" >Stop Tracking</button>
 </ion-content>
