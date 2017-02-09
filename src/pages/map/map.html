@@ -1,4 +1,3 @@
-<!-- <ion-view view-title="" ng-init="init()" > -->
 <ion-header class="op-0-7">
   <ion-navbar>
     <ion-title>
@@ -7,8 +6,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="fq-page" cache-view="false">
-  <ng2-map class='long-map' [options]="mapOptions" >
+<ion-content class="fq-page">
+  <ng2-map class='long-map' [options]="mapOptions">
     <custom-marker *ngFor="let pos of positions"
           [position]="pos"><div class="avatar walk-south"></div></custom-marker>
     <marker *ngFor="let errand of errands"
