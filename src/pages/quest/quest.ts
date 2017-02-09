@@ -45,17 +45,20 @@ export class QuestPage {
     let modal = this.modalCtrl.create(QuestFormPage);
     modal.present();
     modal.onDidDismiss(modalData => {
-      if(modalData == null){ return }
+      console.log("MODAL HAS BEEN DISMISSED");
+      if(modalData == null){ console.log("modalData: " + modalData); return; }
       this.requestService.getLocationInfo(modalData.place_id)
       .map(res => res.json())
       .subscribe(locationData => {
+        console.log("LOCATIONDATA");
+        console.log(locationData);
         var location = locationData.result.geometry.location;
         var postData = {
           task: modalData.task,
           latitude: location.lat,
           longitude: location.lng,
-          token: localStorage["token"]
         }
+        console.log("POST DATA FROM MODAL");
         console.log(postData);
         this.requestService.postErrands(postData)
         .subscribe(data => {

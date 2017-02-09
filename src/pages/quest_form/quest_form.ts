@@ -14,12 +14,15 @@ export class QuestFormPage {
   autocompleteItems;
   autocomplete;
   autocompleteSelection;
+  clicked: boolean;
   showList: boolean;
   // details_service = new
   service = new google.maps.places.AutocompleteService();
 
 
   constructor (public viewCtrl: ViewController, private zone: NgZone) {
+    this.clicked = false;
+    this.autocompleteSelection = 0;
     this.address = {
       place: ''
     };
@@ -29,10 +32,13 @@ export class QuestFormPage {
     };
   }
   dismissPage(){
+    this.clicked = true;
     var data = {
       task: this.task,
       place_id: this.autocompleteSelection.place_id
     }
+    console.log("DISMISSING PAGE");
+    console.log(data);
     if(data.place_id != null){
       this.viewCtrl.dismiss(data);
     }

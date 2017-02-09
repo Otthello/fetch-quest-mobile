@@ -169,6 +169,7 @@ export class MapPage {
         console.log("**********************GET ERRAND LOCATIONS***********************")
         console.log(data);
         for(var i = 0, j = data.data.length;i<j; i++){
+          localStorage.setItem("markers",JSON.stringify(self.errands));
           self.errands.push({
             errand_id: data.data[i].id,
             coords: [data.data[i].lat, data.data[i].lng],
@@ -178,7 +179,6 @@ export class MapPage {
           });
         }
 
-        localStorage.setItem("markers",JSON.stringify(self.errands));
     });
   }
 
