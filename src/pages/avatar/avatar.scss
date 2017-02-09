@@ -1,0 +1,41 @@
+.line {
+  /*border: 2px dashed orange;*/
+}
+
+.char-template {
+  margin: 0px 99px 0 99px;
+  /*border: 1px dotted green;*/
+  max-height: 435px;
+  z-index: 0;
+}
+
+#hatty {
+  height: 70px;
+  width: 70px;
+  /*border: 1px dotted cyan;*/
+  position: relative;
+  left: 151px;
+  top: 47px;
+  z-index: 2;
+}
+
+#loot-box {
+/*  position: relative;
+  left: 270px;
+  top: 360px;*/
+}
+
+#fab-box {
+  border: 1px solid pink;
+  position: relative;
+  left: 120px;
+  top: 340px;
+}
+
+
+.equip-select {
+  height: 62px;
+  width: 62px;
+
+}
+

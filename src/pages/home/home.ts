@@ -47,7 +47,8 @@ export class HomePage {
     var self = this;
     var credentials = {
       email: this.email,
-      password: this.password
+      password: this.password,
+      key: "d67cd72d34986c1d7d8a42cfb7513f07"
     }
     var loginStatus = this.requestService.loginUser(credentials);
     loginStatus.subscribe(data => {
