@@ -1,24 +1,30 @@
 import { Component } from '@angular/core';
 import { RequestService } from '../../app/services/request.service';
+
 import { HomePage } from '../home/home';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, Alert } from 'ionic-angular';
 
 @Component({
   selector: 'page-avatar',
   templateUrl: 'avatar.html'
+
 })
 export class AvatarPage {
     equips: any;
+    equipType: string;
     currentEquip: any;
     availableEquips: any;
     startingIndex: number;
 
   constructor(public navCtrl: NavController, private requestService: RequestService) {
-    console.log("hi from avatar page");
-    this.startingIndex = 0;
-    this.equips = [];
-    this.availableEquips = [];
+      console.log("hi from avatar page");
+      this.startingIndex = 0;
+      this.equips = [];
+      this.availableEquips = [];
+      this.equipType;
+
   }
+
   setItem(equip){
     this.currentEquip = equip;
     localStorage.setItem("currentEquip", JSON.stringify(equip));

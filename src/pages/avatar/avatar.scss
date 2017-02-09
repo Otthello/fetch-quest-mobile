@@ -10,18 +10,48 @@
 
 .char-template {
   margin: 0px 99px 0 99px;
-  /*border: 1px dotted green;*/
-  max-height: 435px;
+  border: 3px dotted green;
+  max-height: 400px;
   z-index: 0;
 }
 
 #hatty {
   height: 70px;
   width: 70px;
-  /*border: 1px dotted cyan;*/
+  border: 3px dotted cyan;
   position: relative;
-  left: 151px;
-  top: 47px;
+  left: 146px;
+  top: 51px;
+  z-index: 2;
+}
+
+#chetty {
+  height: 80px;
+  width: 120px;
+  border: 3px dotted brown;
+  position: relative;
+  left: 46px;
+  top: 165px;
+  z-index: 2;
+}
+
+#bootyL {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  left: -5px;
+  top: 390px;
+  z-index: 2;
+}
+
+#bootyR {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  right: 120px;
+  top: 390px;
   z-index: 2;
 }
 
@@ -32,7 +62,7 @@
 }
 
 #fab-box {
-  border: 1px solid pink;
+  /*border: 1px solid pink;*/
   position: relative;
   left: 120px;
   top: 340px;
