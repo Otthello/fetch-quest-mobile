@@ -34,7 +34,7 @@ $spriteHeight:64px;
   position:absolute;
   width: $spriteWidth;
   height:$spriteHeight;
-  background-image: url("assets/avatar_sprite_sheet.png");
+  background-image: url("../assets/avatar_sprite_sheet.png");
   }
 
 .walk-south {
@@ -59,9 +59,4 @@ $spriteHeight:64px;
     background-position: -576px -128px;
   }
 
-}
-
-.fq-page{
-  background-image: url("assets/fq_page_bg.png");
-  background-repeat: no-repeat;
 }

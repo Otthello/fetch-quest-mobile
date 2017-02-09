@@ -44,6 +44,23 @@ span, h1, h2, h3, h4, p, div, label{
   opacity: 0.7;
 }
 
+.fq-book-cover{
+  background-image: url("../assets/fq_bookcover.png");
+  background-repeat: no-repeat;
+}
+
+.fq-page{
+  background-image: url("../assets/fq_page_bg.png");
+  background-repeat: no-repeat;
+}
+
+.fq-banner{
+  background-image: url("../assets/fq_main_banner.png");
+  height: 8em;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 // @media not all and (min-height: 600px) and (min-width: 768px) {
 //   ion-modal ion-backdrop {
 //     visibility: visible;
