@@ -1,14 +1,16 @@
-<!-- <ion-header>
+
+<ion-header class="op-0-7">
+
   <ion-navbar>
     <ion-title>
       Avatar
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-list-header>Avatar</ion-list-header> -->
+<ion-list-header>Avatar</ion-list-header>
 
 
-  <ion-content class="line">
+  <ion-content class="line fq-page">
     <img *ngIf="currentEquip != null" src="{{currentEquip.image_url}}" id="hatty" text-center>
 
     <img src="../../assets/img/female-template.gif" class="char-template">
@@ -35,11 +37,6 @@
       <button ion-fab (click)="moveUp()" color="secondary"><ion-icon name="arrow-dropup"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
-
-
-
-
-
   <ion-list>
     <button ion-button (click)="logoutUser()">Logout</button>
   </ion-list>

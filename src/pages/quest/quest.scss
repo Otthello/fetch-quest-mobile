@@ -5,9 +5,17 @@
 //   }
 // }
 page-quest {
-  
+
   ion-page.modal {
       padding: 30px;
       background: rgba(0,0,0,0.5);
   }
 }
+
+.fq-page{
+  background-image: url("../../assets/fq_page_bg.png");
+  background-repeat: no-repeat;
+
+}
+
+

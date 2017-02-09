@@ -3,6 +3,8 @@ page-about {
 }
 .long-map{
   height: 427px;
+  width: 90%;
+  margin: 0 auto;
 }
 popover-half {
   max-height: 30%;
@@ -50,4 +52,9 @@ $spriteHeight:64px;
     background-position: -576px -128px;
   }
 
+}
+
+.fq-page{
+  background-image: url("../../assets/fq_page_bg.png");
+  background-repeat: no-repeat;
 }
