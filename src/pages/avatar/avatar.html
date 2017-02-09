@@ -1,6 +1,4 @@
-HATS-1 CHEST-2 GLOVES-3 BOOTS-4
 <ion-header class="op-0-7">
-
   <ion-navbar>
     <ion-title>
       Avatar
@@ -18,8 +16,8 @@ HATS-1 CHEST-2 GLOVES-3 BOOTS-4
     <img *ngIf="currentEquips[3] != null" src="{{currentEquips[3].image_url}}" class="page" id="bootyL" text-center>
     <img *ngIf="currentEquips[3] != null" src="{{currentEquips[3].image_url}}" class="page" id="bootyR" text-center>
 
-    <img src="../../assets/img/male-template.jpg" class="char-template">
-    <!-- <img src="../../assets/img/female-template.gif" class="fem-char-template"> -->
+    <img src="../../assets/img/male-template.png" class="char-template">
+    <!-- <img src="../../assets/img/female-template.png" class="fem-char-template"> -->
 
   <ion-fab right bottom id="loot-box">
     <button ion-fab color="clear"><img src="../../assets/img/box3-crop.png"></button>
@@ -28,7 +26,6 @@ HATS-1 CHEST-2 GLOVES-3 BOOTS-4
       <button ion-fab (click)="setItem(availableEquips[0])" *ngIf="availableEquips[0] != null" class="equip-select"><img src="{{availableEquips[0].image_url}}" text-center></button>
       <button ion-fab (click)="setItem(availableEquips[1])" *ngIf="availableEquips[1] != null" class="equip-select"><img src="{{availableEquips[1].image_url}}" text-center></button>
       <button ion-fab (click)="setItem(availableEquips[2])" *ngIf="availableEquips[2] != null" class="equip-select"><img src="{{availableEquips[2].image_url}}" text-center></button>
-      <!-- <button ion-fab (click)="setItem(availableEquips[3])" *ngIf="availableEquips[3] != null" class="equip-select"><img src="{{availableEquips[3].image_url}}" text-center></button> -->
       <button ion-fab (click)="moveUp()" color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
