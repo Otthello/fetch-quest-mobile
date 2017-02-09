@@ -10,12 +10,12 @@
   <button ion-button (click)="postLocation()">Send your location</button> -->
   <p *ngIf="showErrors">Incorrect username or password!</p>
   <div class="fq-banner"></div>
-  <img src="../../assets/parch2.png" class="parchment">
-      <ion-item class="form-input">
-        <ion-label>Email</ion-label>
+  <img src="../../assets/parch2.png" class="parchment-home">
+      <ion-item class="clear">
+        <ion-label class="label">Email</ion-label>
         <ion-input type ="text" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
-      <ion-item class="form-input">
+      <ion-item class="clear">
         <ion-label>Password</ion-label>
         <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
