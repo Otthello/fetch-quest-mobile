@@ -33,11 +33,11 @@ export class AvatarPage {
   }
 
   moveUp(){
-    if(this.startingIndex < this.equips.length - 4){
+    if(this.startingIndex < this.equips.length - 3){
       this.startingIndex++;
       var newArray = [];
       var i = this.startingIndex;
-      while(i < this.startingIndex + 4 && this.equips[i] != null){
+      while(i < this.startingIndex + 3 && this.equips[i] != null){
         newArray.push(this.equips[i]);
         i++;
       }
@@ -52,7 +52,7 @@ export class AvatarPage {
       this.startingIndex--;
       var newArray = [];
       var i = this.startingIndex;
-      while(i < this.startingIndex + 4 && this.equips[i] != null){
+      while(i < this.startingIndex + 3 && this.equips[i] != null){
         newArray.push(this.equips[i]);
         i++;
       }
@@ -70,7 +70,7 @@ export class AvatarPage {
       console.log(this.equips);
       console.log("EQUIPS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
       var i = 0;
-      while(i < 4 && this.equips[i] != null){
+      while(i < 3 && this.equips[i] != null){
         this.availableEquips.push(this.equips[i]);
         i++;
       }

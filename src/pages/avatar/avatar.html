@@ -29,14 +29,10 @@ HATS-1 CHEST-2 GLOVES-3 BOOTS-4
       <button ion-fab (click)="setItem(availableEquips[0])" *ngIf="availableEquips[0] != null" class="equip-select"><img src="{{availableEquips[0].image_url}}" text-center></button>
       <button ion-fab (click)="setItem(availableEquips[1])" *ngIf="availableEquips[1] != null" class="equip-select"><img src="{{availableEquips[1].image_url}}" text-center></button>
       <button ion-fab (click)="setItem(availableEquips[2])" *ngIf="availableEquips[2] != null" class="equip-select"><img src="{{availableEquips[2].image_url}}" text-center></button>
-      <button ion-fab (click)="setItem(availableEquips[3])" *ngIf="availableEquips[3] != null" class="equip-select"><img src="{{availableEquips[3].image_url}}" text-center></button>
+      <!-- <button ion-fab (click)="setItem(availableEquips[3])" *ngIf="availableEquips[3] != null" class="equip-select"><img src="{{availableEquips[3].image_url}}" text-center></button> -->
       <button ion-fab (click)="moveUp()" color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
 
-
-
-  <ion-list>
-    <button ion-button (click)="logoutUser()">Logout</button>
-  </ion-list>
+  <button ion-button (click)="logoutUser()" class="button-styling" id="avatar-logout">Logout</button>
 </ion-content>

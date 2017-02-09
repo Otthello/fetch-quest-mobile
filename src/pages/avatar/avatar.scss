@@ -104,6 +104,18 @@
 .equip-select {
   height: 62px;
   width: 62px;
+  background-color: rgba(255, 255, 255, 0);
+}
 
+.button-styling {
+  font-size: 28px;
+  font-variant: small-caps;
+  font-weight: 600;
+  color: crimson;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#avatar-logout {
+  padding: 0px 0px 50px 20px;
 }
 
