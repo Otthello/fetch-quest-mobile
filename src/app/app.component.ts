@@ -19,11 +19,10 @@ export class MyApp {
   rootPage: any;
 
   constructor(platform: Platform) {
-    this.rootPage = HomePage;
-    // this.rootPage = TabsPage;
-    // if(localStorage["token"] == null){
-    //   this.rootPage = HomePage;
-    // }
+    this.rootPage = TabsPage;
+    if(localStorage["token"] == null){
+      this.rootPage = HomePage;
+    }
     // if(localStorage["markers"]){ localStorage.removeItem("markers"); }
     platform.ready().then(() => {
       Ng2MapComponent['apiUrl']= 'https://maps.google.com/maps/api/js?key=AIzaSyBavd4lIbm2bKkBHwvkMASXCQ3JHHl6FaM';
