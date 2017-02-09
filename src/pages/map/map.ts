@@ -133,7 +133,6 @@ export class MapPage {
   }
 
   showInfoPane(myEvent){
-    console.log(myEvent);
     let revealPopover = this.popoverCtrl.create(PopoverPage,myEvent);
 
     revealPopover.present();
@@ -143,7 +142,7 @@ export class MapPage {
   randomIcon(){
     let randomAsset: number;
     var iconUrls = [
-    "../../assets/castle.gif",
+    "assets/castle.gif",
     "http://i.imgur.com/kCAUq0E.png",
     "http://i.imgur.com/QhEzDuK.png",
     "http://i.imgur.com/1tjHokx.png",
@@ -166,10 +165,9 @@ export class MapPage {
       var res = this.requestService.getErrandLocations()
       .map(res => res.json())
       .subscribe(data => {
-        console.log("**********************GET ERRAND LOCATIONS***********************")
-        console.log(data);
+        // console.log("**********************GET ERRAND LOCATIONS***********************")
+        // console.log(data);
         for(var i = 0, j = data.data.length;i<j; i++){
-          localStorage.setItem("markers",JSON.stringify(self.errands));
           self.errands.push({
             errand_id: data.data[i].id,
             coords: [data.data[i].lat, data.data[i].lng],
@@ -177,6 +175,10 @@ export class MapPage {
             hook: data.data[i].hook,
             icon: self.randomIcon()
           });
+          console.log("******************************RECEIVED LOCATIONS******************");
+          console.log(JSON.stringify(self.errands));
+          console.log(self.errands.count);
+          localStorage.setItem("markers",JSON.stringify(self.errands));
         }
 
     });

@@ -19,6 +19,7 @@ export class QuestPage {
     .map(res => res.json())
     .subscribe(data => {
       self.errands = data.data;
+      console.log("SELF DOT ERRANDS!!!!!!!!!!!!!!!!!!!");
       // self.errands.push({showInfo: false});
       // self.errands.splice(self.errands.length - 1, 1);
       console.log(self.errands);
@@ -65,7 +66,7 @@ export class QuestPage {
             this.getErrands();
           }, error => {
             console.log("error!");
-            // console.log(error);
+
           });
       });
     });
