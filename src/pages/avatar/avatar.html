@@ -16,11 +16,11 @@
     <img *ngIf="currentEquips[3] != null" src="{{currentEquips[3].image_url}}" class="page" id="bootyL" text-center>
     <img *ngIf="currentEquips[3] != null" src="{{currentEquips[3].image_url}}" class="page" id="bootyR" text-center>
 
-    <img src="../../assets/img/male-template.png" class="char-template">
+    <img src="assets/img/male-template.png" class="char-template">
     <!-- <img src="../../assets/img/female-template.png" class="fem-char-template"> -->
 
   <ion-fab right bottom id="loot-box">
-    <button ion-fab color="clear"><img src="../../assets/img/box3-crop.png"></button>
+    <button ion-fab color="clear"><img src="assets/img/box3-crop.png"></button>
     <ion-fab-list side="top" *ngIf="equips.length != 0">
       <button ion-fab (click)="moveDown()" color="danger"><ion-icon name="arrow-dropdown"></ion-icon></button>
       <button ion-fab (click)="setItem(availableEquips[0])" *ngIf="availableEquips[0] != null" class="equip-select"><img src="{{availableEquips[0].image_url}}" text-center></button>
