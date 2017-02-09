@@ -4,35 +4,97 @@
   background-repeat: no-repeat;
 }
 
-.line {
+.page {
+  margin-top: -50px;
   /*border: 2px dashed orange;*/
 }
 
 .char-template {
-  margin: 0px 99px 0 99px;
-  /*border: 1px dotted green;*/
-  max-height: 435px;
+  margin: 0px 0px 0 99px;
+  border: 3px dotted green;
+  max-height: 400px;
+  z-index: 0;
+}
+
+.fem-char-template {
+  margin: -10px 0px 0 99px;
+  border: 3px dotted green;
+  max-height: 400px;
   z-index: 0;
 }
 
 #hatty {
   height: 70px;
   width: 70px;
-  /*border: 1px dotted cyan;*/
+  border: 3px dotted cyan;
   position: relative;
-  left: 151px;
-  top: 47px;
+  left: 146px;
+  top: 51px;
+  z-index: 2;
+}
+
+#chetty {
+  height: 110px;
+  width: 140px;
+  border: 3px dotted brown;
+  position: relative;
+  left: 40px;
+  top: 165px;
+  z-index: 2;
+}
+
+#glovyL {
+  height: 50px;
+  width: 30px;
+  border: 3px dotted purple;
+  position: relative;
+  right: -25px;
+  top: 245px;
+  transform: rotate(-6deg);
+  z-index: 2;
+}
+
+#glovyR {
+  height: 50px;
+  width: 30px;
+  border: 3px dotted purple;
+  position: relative;
+  right: 120px;
+  top: 245px;
+  transform: scale(-1, 1) rotate(-6deg);
+  z-index: 2;
+}
+
+#bootyL {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  right: 141px;
+  top: 390px;
+  transform: scale(-1, 1);
+  z-index: 2;
+}
+
+#bootyR {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  right: 115px;
+  top: 390px;
   z-index: 2;
 }
 
 #loot-box {
+  margin-bottom: 60px;
 /*  position: relative;
   left: 270px;
   top: 360px;*/
 }
 
 #fab-box {
-  border: 1px solid pink;
+  /*border: 1px solid pink;*/
   position: relative;
   left: 120px;
   top: 340px;
@@ -42,6 +104,22 @@
 .equip-select {
   height: 62px;
   width: 62px;
+  background-color: rgba(255, 255, 255, 0);
+}
 
+.button-styling {
+  font-size: 28px;
+  font-variant: small-caps;
+  font-weight: 600;
+  color: crimson;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#avatar-logout {
+  padding: 0px 0px 52px 20px;
+}
+
+.clear {
+  background-color: rgba(255, 255, 255, 0)
 }
 

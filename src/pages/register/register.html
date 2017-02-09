@@ -9,29 +9,32 @@
   <ion-list>
     <ion-list-header *ngIf="incorrectPassword == true">Passwords do not match!</ion-list-header>
     <div class="fq-banner"></div>
+
+    <img src="../../assets/parch2.png" class="parchment-reg">
+
     <form (ngSubmit)="registerSubmit()">
-      <ion-item>
+      <ion-item class="form-input clear">
         <ion-label>Username</ion-label>
         <ion-input type ="text" [(ngModel)]="username" name="username"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>email</ion-label>
+      <ion-item class="form-input clear">
+        <ion-label class="label">email</ion-label>
         <ion-input type ="text" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Password</ion-label>
+      <ion-item class="form-input clear">
+        <ion-label class="label">Password</ion-label>
         <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Retype Password</ion-label>
+      <ion-item class="form-input clear">
+        <ion-label class="label">Retype Password</ion-label>
         <ion-input type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Avatar</ion-label>
+      <ion-item class="form-input clear">
+        <ion-label class="label">Avatar</ion-label>
         <ion-input type ="text" [(ngModel)]="avatar" name="avatar"></ion-input>
-        <ion-label>(Image URL)</ion-label>
+        <ion-label class="label">(Image URL)</ion-label>
       </ion-item>
-      <button ion-button type="submit">Register</button>
+      <button ion-button type="submit" class="button-styling-reg">Register</button>
     </form>
   </ion-list>
 </ion-content>

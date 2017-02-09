@@ -1,6 +1,4 @@
-
 <ion-header class="op-0-7">
-
   <ion-navbar>
     <ion-title>
       Avatar
@@ -10,34 +8,27 @@
 <ion-list-header>Avatar</ion-list-header>
 
 
-  <ion-content class="line fq-page">
-    <img *ngIf="currentEquip != null" src="{{currentEquip.image_url}}" id="hatty" text-center>
+  <ion-content class="fq-page">
+    <img *ngIf="currentEquips[0] != null" src="{{currentEquips[0].image_url}}" class="page" id="hatty" text-center>
+    <img *ngIf="currentEquips[1] != null" src="{{currentEquips[1].image_url}}" class="page" id="chetty" text-center>
+    <img *ngIf="currentEquips[2] != null" src="{{currentEquips[2].image_url}}" class="page" id="glovyL" text-center>
+    <img *ngIf="currentEquips[2] != null" src="{{currentEquips[2].image_url}}" class="page" id="glovyR" text-center>
+    <img *ngIf="currentEquips[3] != null" src="{{currentEquips[3].image_url}}" class="page" id="bootyL" text-center>
+    <img *ngIf="currentEquips[3] != null" src="{{currentEquips[3].image_url}}" class="page" id="bootyR" text-center>
 
-    <img src="assets/img/male-template.jpg" class="char-template">
-    <!-- <img src="../../assets/img/box3-crop.png" id="hatty"> -->
+    <img src="../../assets/img/male-template.png" class="char-template">
+    <!-- <img src="../../assets/img/female-template.png" class="fem-char-template"> -->
 
   <ion-fab right bottom id="loot-box">
-    <button ion-fab color="clear"><img src="assets/img/box3-crop.png"></button>
+    <button ion-fab color="clear"><img src="../../assets/img/box3-crop.png"></button>
     <ion-fab-list side="top" *ngIf="equips.length != 0">
-      <button ion-fab (click)="moveDown()" color="secondary"><ion-icon name="arrow-dropdown"></ion-icon></button>
+      <button ion-fab (click)="moveDown()" color="danger"><ion-icon name="arrow-dropdown"></ion-icon></button>
       <button ion-fab (click)="setItem(availableEquips[0])" *ngIf="availableEquips[0] != null" class="equip-select"><img src="{{availableEquips[0].image_url}}" text-center></button>
       <button ion-fab (click)="setItem(availableEquips[1])" *ngIf="availableEquips[1] != null" class="equip-select"><img src="{{availableEquips[1].image_url}}" text-center></button>
       <button ion-fab (click)="setItem(availableEquips[2])" *ngIf="availableEquips[2] != null" class="equip-select"><img src="{{availableEquips[2].image_url}}" text-center></button>
-      <button ion-fab (click)="setItem(availableEquips[3])" *ngIf="availableEquips[3] != null" class="equip-select"><img src="{{availableEquips[3].image_url}}" text-center></button>
-      <button ion-fab (click)="moveUp()" color="secondary"><ion-icon name="arrow-dropup"></ion-icon></button>
+      <button ion-fab (click)="moveUp()" color="danger"><ion-icon name="arrow-dropup"></ion-icon></button>
     </ion-fab-list>
   </ion-fab>
 
-    <!-- <ion-fab-list side="top" *ngIf="equips.length != 0">
-      <button ion-fab (click)="moveDown()" color="secondary"><ion-icon name="arrow-dropdown"></ion-icon></button>
-      <button ion-fab on-drag="OnDrag(setItem(availableEquips[0]))" *ngIf="availableEquips[0] != null" class="equip-select"><img src="{{availableEquips[0].image_url}}" text-center></button>
-      <button ion-fab on-drag="OnDrag(setItem(availableEquips[1]))" *ngIf="availableEquips[1] != null" class="equip-select"><img src="{{availableEquips[1].image_url}}" text-center></button>
-      <button ion-fab on-drag="OnDrag(setItem(availableEquips[2]))" *ngIf="availableEquips[2] != null" class="equip-select"><img src="{{availableEquips[2].image_url}}" text-center></button>
-      <button ion-fab on-drag="OnDrag(setItem(availableEquips[3]))" *ngIf="availableEquips[3] != null" class="equip-select"><img src="{{availableEquips[3].image_url}}" text-center></button>
-      <button ion-fab (click)="moveUp()" color="secondary"><ion-icon name="arrow-dropup"></ion-icon></button>
-    </ion-fab-list> -->
-  <!-- </ion-fab> -->
-  <ion-list>
-    <button ion-button (click)="logoutUser()">Logout</button>
-  </ion-list>
+  <button ion-button (click)="logoutUser()" class="button-styling" id="avatar-logout">Logout</button>
 </ion-content>

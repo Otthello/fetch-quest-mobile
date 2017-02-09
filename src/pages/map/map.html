@@ -1,4 +1,3 @@
-<!-- <ion-view view-title="" ng-init="init()" > -->
 <ion-header class="op-0-7">
   <ion-navbar>
     <ion-title>
@@ -7,17 +6,16 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="fq-page" cache-view="false">
-  <ng2-map class='long-map' [options]="mapOptions" >
+<ion-content class="fq-page">
+  <ng2-map class='long-map' [options]="mapOptions">
     <custom-marker *ngFor="let pos of positions"
           [position]="pos"><div class="avatar walk-south"></div></custom-marker>
     <marker *ngFor="let errand of errands"
         [icon]="errand.icon" [position]="errand.coords" (click)="showInfoPane(errand)">
     </marker>
   </ng2-map>
-
   <p><span>Current Latitude: {{locationTracker.lat}}</span>
   <span>Current Longitude: {{locationTracker.lng}}</span></p>
-  <button ion-button primary (click)="start()">Start Tracking</button>
-  <button ion-button primary (click)="stop()">Stop Tracking</button>
+  <button (click)="start()" class="button-styling" >Start Tracking</button>
+  <button (click)="stop()" class="button-styling" >Stop Tracking</button>
 </ion-content>

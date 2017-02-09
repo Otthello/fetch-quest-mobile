@@ -14,18 +14,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-// .modal-wrapper {
-//   border: 20px solid #ffffff;
-//   border-radius: 20px;
-//   // max-height: calc(100vh - 225px)
-//   // border-color: #7B1FA2;
-//   position: absolute;
-//   width: 80%;
-//   height: 75%;
-//   top: 10%;
-//   left: 10%;
-// }
-span, h1, h2, h3, h4, p, div{
+.modal-wrapper {
+  border: 20px solid #ffffff;
+  border-radius: 20px;
+  // max-height: calc(100vh - 225px)
+  // border-color: #7B1FA2;
+  position: absolute;
+  width: 80%;
+  height: 75%;
+  top: 10%;
+  left: 10%;
+}
+
+span, h1, h2, h3, h4, p, div, label{
   font-family: 'IM Fell English', serif;
 }
 .title-hack {
@@ -43,8 +44,8 @@ span, h1, h2, h3, h4, p, div{
   opacity: 0.7;
 }
 
-// @media not all and (min-height: 600px) and (min-width: 768px) {
-//   ion-modal ion-backdrop {
-//     visibility: visible;
-//   }
-// }
+@media not all and (min-height: 600px) and (min-width: 768px) {
+  ion-modal ion-backdrop {
+    visibility: visible;
+  }
+}
