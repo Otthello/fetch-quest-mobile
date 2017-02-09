@@ -27,7 +27,7 @@ export class AvatarPage {
 
   setItem(equip){
     console.log("EQUIPPING!");
-    console.log(equip);
+    console.log(equip)
     this.currentEquips[equip.slot - 1] = equip;
     localStorage.setItem("currentEquips", JSON.stringify(this.currentEquips));
   }

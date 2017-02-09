@@ -4,12 +4,20 @@
   background-repeat: no-repeat;
 }
 
-.line {
+.page {
+  margin-top: -50px;
   /*border: 2px dashed orange;*/
 }
 
 .char-template {
-  margin: 0px 99px 0 99px;
+  margin: 0px 0px 0 99px;
+  border: 3px dotted green;
+  max-height: 400px;
+  z-index: 0;
+}
+
+.fem-char-template {
+  margin: -10px 0px 0 99px;
   border: 3px dotted green;
   max-height: 400px;
   z-index: 0;
@@ -26,11 +34,11 @@
 }
 
 #chetty {
-  height: 80px;
-  width: 120px;
+  height: 110px;
+  width: 140px;
   border: 3px dotted brown;
   position: relative;
-  left: 46px;
+  left: 40px;
   top: 165px;
   z-index: 2;
 }
@@ -79,6 +87,7 @@
 }
 
 #loot-box {
+  margin-bottom: 60px;
 /*  position: relative;
   left: 270px;
   top: 360px;*/
