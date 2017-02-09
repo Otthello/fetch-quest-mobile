@@ -22,6 +22,7 @@ export class RequestService{
   }
 
   registerUser(userInfo){
+    userInfo["key"] = "d67cd72d34986c1d7d8a42cfb7513f07";
     var url = "http://flashy-pancake.herokuapp.com/api/v1/users";
     url = url + "?" + this.serialize(userInfo);
     return this.http.post(url)
@@ -53,7 +54,6 @@ export class RequestService{
     headers.append("Access-Control-Allow-Headers","X-Requested-With");
     url = url + "?" + this.serialize(options);
     return this.http.get(url);
-
   }
 
   postErrands(data) {
@@ -67,7 +67,7 @@ export class RequestService{
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     let options = {
       key: "d67cd72d34986c1d7d8a42cfb7513f07",
-      token: "y9sRWTJZMxrdGQV4qFAAAD9d",
+      token: localStorage["token"],
       options: "location"
     };
 
@@ -78,6 +78,18 @@ export class RequestService{
     console.log("getting errands from...");
     return this.http.get(url);
   }
+
+  getEquips(){
+    let url = "http://flashy-pancake.herokuapp.com/api/v1/equips";
+    let options = {
+      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      token: localStorage["token"],
+  };
+    var headers = new Headers();
+    headers.append("Access-Control-Allow-Headers","X-Requested-With");
+    url = url + "?" + this.serialize(options);
+    return this.http.get(url);
+}
 
   serialize(obj) {
     var result = [];
