@@ -1,6 +1,6 @@
 <ion-header class="op-0-7">
   <ion-navbar>
-    <ion-title>
+    <ion-title class="margin">
       Map
     </ion-title>
   </ion-navbar>
@@ -14,8 +14,16 @@
         [icon]="errand.icon" [position]="errand.coords" (click)="showInfoPane(errand)">
     </marker>
   </ng2-map>
-  <p><span>Current Latitude: {{locationTracker.lat}}</span>
-  <span>Current Longitude: {{locationTracker.lng}}</span></p>
-  <button (click)="start()" class="map-button" >Start Tracking</button>
-  <button (click)="stop()" class="map-button" >Stop Tracking</button>
+
+<!--   <p><span>Current Latitude: {{locationTracker.lat}}</span>
+  <span>Current Longitude: {{locationTracker.lng}}</span></p> -->
+  <button ion-button (click)="start()" class="button-styling start">
+    O
+  </button>
+  <button ion-button (click)="stop()" class="button-styling stop">
+    X
+  </button>
+
 </ion-content>
+
+<!-- test@test.com -->

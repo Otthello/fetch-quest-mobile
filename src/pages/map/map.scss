@@ -15,10 +15,11 @@ page-about {
 }
 
 .long-map{
-  height: 427px;
-  width: 90%;
-  margin: 0 auto;
+  height: 465px;
+  width: 367px;
+  margin-left: 8px;
 }
+
 popover-half {
   max-height: 30%;
   width: 200px;
@@ -60,3 +61,20 @@ $spriteHeight:64px;
   }
 
 }
+
+.fq-page{
+  background-image: url("../../assets/fq_page_bg.png");
+  background-repeat: no-repeat;
+}
+
+.start {
+  position: absolute;
+  bottom: 80px;
+}
+
+.stop {
+  position: absolute;
+  left: 80px;
+  bottom: 80px;
+}
+

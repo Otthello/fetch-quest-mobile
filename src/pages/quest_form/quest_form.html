@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="new-quest">
     <h4 style="text-align: center;">Proclaim thy task</h4>
     <ion-input style="background-color: #DDD; padding: 0px 15px;" type ="text" [(ngModel)]="task" name="task"></ion-input>
 
@@ -20,7 +20,9 @@
         </ion-item>
       </ion-list>
     </ion-content>
-
-    <button ion-button tappable left bottom (click)="dismissPage()">Embark on thou quest</button>
-    <button ion-button tappable right bottom (click)="cancelPage()">Cancel</button>
+    <ion-content>
+      <button ion-button tappable left bottom (click)="dismissPage()" class="button-styling-form">Embark on thou quest!</button>
+      <button ion-button tappable right bottom (click)="cancelPage()" class="button-styling-retreat">retreat</button>
+    </ion-content>
 </ion-content>
+
