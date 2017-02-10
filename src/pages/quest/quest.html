@@ -8,8 +8,10 @@
 
 <ion-content class="fq-page">
   <ion-list>
+
     <ion-list-header>Your Quests</ion-list-header>
     <button ion-button (click)="showQuestForm()" class="">Embark on a new quest</button>
+
     <ion-item *ngFor="let errand of errands">
       <ion-card (click)="getErrandInfo(errand)">
         <img src="{{errand.npc_avatar_url}}" item-left style="width: 80px; height: 80px; float: left;" />

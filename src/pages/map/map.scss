@@ -1,6 +1,19 @@
 page-about {
 
 }
+.map-button{
+  margin-top: 1em;
+  background-color: transparent;
+  font-size: 1.2em;
+  margin-left: 1em;
+  border: 1px dotted black;
+  border-radius: 10px;
+}
+
+.map-button:hover{
+  font-size: 1.3em
+}
+
 .long-map{
   height: 465px;
   width: 367px;
@@ -16,19 +29,13 @@ $spriteWidth:64px;
 $spriteHeight:64px;
 
 
-.skelly{
-  background-image: url("../../assets/skelly.png");
-  width: 36px;
-  height: 40px;
-}
-
 .avatar{
   padding: 0;
   margin: 0 auto;
   position:absolute;
   width: $spriteWidth;
   height:$spriteHeight;
-  background-image: url("../../assets/avatar_sprite_sheet.png");
+  background-image: url("../assets/avatar_sprite_sheet.png");
   }
 
 .walk-south {

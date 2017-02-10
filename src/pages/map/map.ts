@@ -143,7 +143,7 @@ export class MapPage {
   randomIcon(){
     let randomAsset: number;
     var iconUrls = [
-    "../../assets/castle.gif",
+    "../assets/castle.gif",
     "http://i.imgur.com/kCAUq0E.png",
     "http://i.imgur.com/QhEzDuK.png",
     "http://i.imgur.com/1tjHokx.png",
