@@ -20,19 +20,19 @@ export class RequestService{
 
   loginUser(credentials){
     var url = "http://flashy-pancake.herokuapp.com/api/v1/login";
-    url = url + "?" + this.serialize(credentials) + "&key=d67cd72d34986c1d7d8a42cfb7513f07";
+    url = url + "?" + this.serialize(credentials) + "&key=18b944cbb4219f54147918d2d74d0ded";
     return this.http.post(url);
   }
 
   registerUser(userInfo){
-    userInfo["key"] = "d67cd72d34986c1d7d8a42cfb7513f07";
+    userInfo["key"] = "18b944cbb4219f54147918d2d74d0ded";
     var url = "http://flashy-pancake.herokuapp.com/api/v1/users";
     url = url + "?" + this.serialize(userInfo);
     return this.http.post(url)
   }
 
   postLocation(coordinates) {
-    coordinates["key"] = "d67cd72d34986c1d7d8a42cfb7513f07";
+    coordinates["key"] = "18b944cbb4219f54147918d2d74d0ded";
     coordinates["token"] = localStorage["token"];
     var url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     var postRequest = url + "?" + this.serialize(coordinates);
@@ -50,7 +50,7 @@ export class RequestService{
   getErrands(){
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     let options = {
-      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      key: "18b944cbb4219f54147918d2d74d0ded",
       token: localStorage["token"],
       username: "VargouilleSupreme",
       email: "test@test.com"
@@ -64,7 +64,7 @@ export class RequestService{
   }
 
   postErrands(data) {
-    data["key"] = "d67cd72d34986c1d7d8a42cfb7513f07";
+    data["key"] = "18b944cbb4219f54147918d2d74d0ded";
     data["token"] = localStorage["token"];
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     url = url + "?" + this.serialize(data);
@@ -75,7 +75,7 @@ export class RequestService{
   getErrandLocations(){
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands";
     let options = {
-      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      key: "18b944cbb4219f54147918d2d74d0ded",
       token: localStorage["token"],
       options: "location"
     };
@@ -92,7 +92,7 @@ export class RequestService{
   postEquips(){
     let url = "http://flashy-pancake.herokuapp.com/api/v1/equips"
     let data = {
-      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      key: "18b944cbb4219f54147918d2d74d0ded",
       token: localStorage["token"]
     }
     url = url + "?" + this.serialize(data);
@@ -101,7 +101,7 @@ export class RequestService{
 
   updateErrand(errand_id){
     var data = {
-      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      key: "18b944cbb4219f54147918d2d74d0ded",
       token: localStorage["token"]
     }
     let url = "http://flashy-pancake.herokuapp.com/api/v1/errands/" + errand_id + "?" + this.serialize(data);
@@ -113,7 +113,7 @@ export class RequestService{
   getEquips(){
     let url = "http://flashy-pancake.herokuapp.com/api/v1/equips";
     let options = {
-      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      key: "18b944cbb4219f54147918d2d74d0ded",
       token: localStorage["token"],
   };
     var headers = new Headers();
