@@ -50,3 +50,11 @@ span, h1, h2, h3, h4, p, div, label{
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.background-image {
+  background-image: url("../assets/parch2.png");
+
+        background-repeat: no-repeat;
+        height: 500px;
+        position: float;
+}
