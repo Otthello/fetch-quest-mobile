@@ -1,12 +1,11 @@
 
 .page {
-  margin-top: -100px;
+  margin-top: -110px;
   /*border: 2px dashed orange;*/
 }
-
 .char-template {
-  margin: 0px 0px 0 99px;
-  border: 3px dotted green;
+  margin: 40px 0px 0px 99px;
+  /*border: 3px dotted green;*/
   max-height: 400px;
   z-index: 0;
 }
@@ -21,28 +20,28 @@
 #hatty {
   height: 70px;
   width: 70px;
-  border: 3px dotted cyan;
-  position: relative;
+  /*border: 3px dotted cyan;*/
+  position: absolute;
   left: 146px;
-  top: 51px;
+  top: 122px;
   z-index: 2;
 }
 
 #chetty {
-  height: 110px;
+  height: 130px;
   width: 140px;
-  border: 3px dotted brown;
-  position: relative;
-  left: 35px;
-  top: 183px;
+  /*border: 3px dotted brown;*/
+  position: absolute;
+  left: 108px;
+  top: 218px;
   z-index: 2;
 }
 
 #glovyL {
   height: 50px;
   width: 30px;
-  border: 3px dotted purple;
-  position: relative;
+  /*border: 3px dotted purple;*/
+  position: absolute;
   right: -25px;
   top: 245px;
   transform: rotate(-6deg);
@@ -52,29 +51,29 @@
 #glovyR {
   height: 50px;
   width: 30px;
-  border: 3px dotted purple;
-  position: relative;
-  right: 120px;
-  top: 245px;
+  /*border: 3px dotted purple;*/
+  position: absolute;
+  right: 140px;
+  top: 242px;
   transform: scale(-1, 1) rotate(-6deg);
   z-index: 2;
 }
 
 #pantz {
-  height: 150px;
-  width: 100px;
-  border: 3px dotted yellow;
-  position: relative;
-  right: 89px;
-  top: 335px;
+  height: 190px;
+  width: 160px;
+  /*border: 3px dotted yellow;*/
+  position: absolute;
+  left: 98px;
+  top: 325px;
   z-index: 2;
 }
 
 #bootyL {
   height: 65px;
   width: 45px;
-  border: 3px dotted orange;
-  position: relative;
+  /*border: 3px dotted orange;*/
+  position: absolute;
   right: 141px;
   top: 390px;
   transform: scale(-1, 1);
@@ -85,7 +84,7 @@
   height: 65px;
   width: 45px;
   /*border: 3px dotted orange;*/
-  position: relative;
+  position: absolute;
   right: 115px;
   top: 390px;
   z-index: 2;
@@ -93,7 +92,7 @@
 
 #loot-box {
   margin-bottom: 60px;
-/*  position: relative;
+/*  position: absolute;
   left: 270px;
   top: 360px;*/
 }
@@ -104,6 +103,110 @@
   left: 120px;
   top: 340px;
 }
+
+
+/*.char-template {
+  margin: 0px 0px 0 99px;
+  border: 3px dotted green;
+  max-height: 400px;
+  z-index: 0;
+}*/
+
+/*.fem-char-template {
+  margin: -10px 0px 0 99px;
+  border: 3px dotted green;
+  max-height: 400px;
+  z-index: 0;
+}*/
+
+/*#hatty {
+  height: 70px;
+  width: 70px;
+  border: 3px dotted cyan;
+  position: relative;
+  left: 146px;
+  top: 51px;
+  z-index: 2;
+}*/
+
+/*#chetty {
+  height: 130px;
+  width: 140px;
+  border: 3px dotted brown;
+  position: relative;
+  left: 108px;
+  top: 202px;
+  z-index: 2;
+}*/
+
+/*#glovyL {
+  height: 50px;
+  width: 30px;
+  border: 3px dotted purple;
+  position: relative;
+  right: -25px;
+  top: 245px;
+  transform: rotate(-6deg);
+  z-index: 2;
+}*/
+
+/*#glovyR {
+  height: 50px;
+  width: 30px;
+  border: 3px dotted purple;
+  position: relative;
+  right: 140px;
+  top: 242px;
+  transform: scale(-1, 1) rotate(-6deg);
+  z-index: 2;
+}*/
+
+/*#pantz {
+  height: 170px;
+  width: 160px;
+  border: 3px dotted yellow;
+  position: relative;
+  left: -44px;
+  top: 355px;
+  z-index: 2;
+}*/
+
+/*#bootyL {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  right: 141px;
+  top: 390px;
+  transform: scale(-1, 1);
+  z-index: 2;
+}*/
+
+/*#bootyR {
+  height: 65px;
+  width: 45px;
+  border: 3px dotted orange;
+  position: relative;
+  right: 115px;
+  top: 390px;
+  z-index: 2;
+}*/
+
+/*#loot-box {
+  margin-bottom: 60px;
+  position: relative;
+  left: 270px;
+  top: 360px;
+}*/
+
+/*#fab-box {
+  border: 1px solid pink;
+  position: relative;
+  left: 120px;
+  top: 340px;
+}*/
+
+
 
 
 .equip-select {

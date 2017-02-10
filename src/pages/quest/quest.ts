@@ -32,7 +32,8 @@ export class QuestPage {
     let alert = this.alertCtrl.create({
       title: "Original task",
       message: errand.task,
-      buttons: ['Dismiss']
+      buttons: ['Dismiss'],
+      cssClass: 'alertStyle'
     });
     alert.present();
   }
