@@ -15,8 +15,14 @@
     </marker>
   </ng2-map>
 
-  <p><span>Current Latitude: {{locationTracker.lat}}</span>
-  <span>Current Longitude: {{locationTracker.lng}}</span></p>
-  <button ion-button primary (click)="start()" class="button-styling" >Start Tracking</button>
-  <button ion-button primary (click)="stop()" class="button-styling" >Stop Tracking</button>
+<!--   <p><span>Current Latitude: {{locationTracker.lat}}</span>
+  <span>Current Longitude: {{locationTracker.lng}}</span></p> -->
+  <button ion-button (click)="start()" class="button-styling start" class="icon-size">
+    <ion-icon name="eye" class="icon-size"></ion-icon>
+  </button>
+  <button ion-button (click)="stop()" class="button-styling stop">
+    <ion-icon name="close"></ion-icon>
+  </button>
 </ion-content>
+
+<!-- test@test.com -->
