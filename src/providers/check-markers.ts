@@ -10,7 +10,7 @@ import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class CheckMarkers {
-  static readonly DISTANCE_THRESHOLD = 200; // in meters
+  static readonly DISTANCE_THRESHOLD = 1500; // in meters
   private coords: any;
   private markers: any;
   private alertActive: boolean;

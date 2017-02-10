@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <p class="title-hack">Your Quest {{clicked}}</p>
+    <p class="title-hack">Your Quest</p>
   </ion-navbar>
 </ion-header>
 
@@ -21,5 +21,6 @@
       </ion-list>
     </ion-content>
 
-    <button ion-button tappable (click)="dismissPage()" class="embark">Embark on thou quest</button>
+    <button ion-button tappable left bottom (click)="dismissPage()">Embark on thou quest</button>
+    <button ion-button tappable right bottom (click)="cancelPage()">Cancel</button>
 </ion-content>
