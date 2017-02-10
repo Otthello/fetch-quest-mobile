@@ -21,6 +21,8 @@ export class QuestFormPage {
 
 
   constructor (public viewCtrl: ViewController, private zone: NgZone) {
+    var modalElement = document.querySelector('.modal-wrapper');
+    // modalElement.classList.remove("modal-wrapper");
     this.clicked = false;
     this.autocompleteSelection = 0;
     this.address = {

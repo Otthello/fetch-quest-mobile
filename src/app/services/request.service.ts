@@ -89,6 +89,15 @@ export class RequestService{
     return this.http.get(url);
   }
 
+  postEquips(){
+    let url = "http://flashy-pancake.herokuapp.com/api/v1/equips"
+    let data = {
+      key: "d67cd72d34986c1d7d8a42cfb7513f07",
+      token: localStorage["token"]
+    }
+    url = url + "?" + this.serialize(data);
+    return this.http.post(url);
+  }
 
   updateErrand(errand_id){
     var data = {

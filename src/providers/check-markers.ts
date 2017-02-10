@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 // import { Geolocation, Geoposition, BackgroundGeolocation } from 'ionic-native';
-import { AlertController } from 'ionic-angular';
+import { AlertController, ModalController } from 'ionic-angular';
 import { RequestService } from '../app/services/request.service';
 import { StorageService } from '../app/services/storage.service';
 import { LocationTracker } from './location-tracker';
 import { LocalNotifications } from 'ionic-native';
+import { RewardPage } from '../pages/reward/reward';
 import { TabsPage } from '../pages/tabs/tabs';
 import 'rxjs/add/operator/filter';
 
 @Injectable()
 export class CheckMarkers {
-  static readonly DISTANCE_THRESHOLD = 1500; // in meters
+  static readonly DISTANCE_THRESHOLD = 15000; // in meters
   private coords: any;
   private markers: any;
   private alertActive: boolean;
   constructor(
     private requestService: RequestService,
     private storageService: StorageService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private modalCtrl: ModalController
   )
   {
     this.alertActive = false;
@@ -49,36 +51,56 @@ export class CheckMarkers {
       }
     });
   }
+  showRewardPage(marker){
+    var self = this;
+    console.log("attempting to show reward page");
+    let modal = this.modalCtrl.create(RewardPage);
+    modal.present();
+    this.alertActive = true;
+    modal.onDidDismiss(data => {
+      self.alertActive = false;
+      self.updateErrand(marker.errand_id);
+    })
+  }
   completeErrand(marker){
     var self = this;
     console.log("BUILDING ALERT");
     console.log("marker");
     console.log(marker);
-    let alert = this.alertCtrl.create({
-      title: "You just completed:",
-      subTitle: marker.hook,
-      buttons: ["Claim thou reward"]
-    });
-    console.log("SHOWING ALERT");
-    this.alertActive = true;
-    alert.present();
-    console.log("ALERT HAS BEEN SHOWN");
-    alert.onDidDismiss(() => {
-      this.alertActive = false;
-      self.updateErrand(marker.errand_id);
-    });
+    // this.requestService.postEquips()
+    // .subscribe(data => {
+    //   console.log("RECEIVED AN EQUIP");
+    //   console.log(data);
+    // }, error => {
+    //   console.log("error!");
+    // });
+    // let alert = this.alertCtrl.create({
+    //   title: "You just completed:",
+    //   subTitle: marker.hook,
+    //   buttons: ["Claim thou reward"]
+    // });
+    // console.log("SHOWING ALERT");
+    // this.alertActive = true;
+    // alert.present();
+    // console.log("ALERT HAS BEEN SHOWN");
+    // alert.onDidDismiss(() => {
+    //   this.alertActive = false;
+    //   self.updateErrand(marker.errand_id);
+    // });
+
+    this.showRewardPage(marker);
     this.scheduleNotification(marker);
   }
 
   updateErrand(errand_id){
     this.requestService.updateErrand(errand_id)
     .subscribe(data => {
-        console.log("DONE UPDATING ERRAND");
-        console.log(data);
-      }, error => {
-        console.log("error!");
-        // console.log(error);
-      });
+      console.log("DONE UPDATING ERRAND");
+      console.log(data);
+    }, error => {
+      console.log("error!");
+    });
+
   }
 
   scheduleNotification(marker){

@@ -10,6 +10,7 @@ import { QuestFormPage } from '../pages/quest_form/quest_form';
 import { AvatarPage } from '../pages/avatar/avatar';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PopoverPage } from '../pages/map/popover';
+import { RewardPage } from '../pages/reward/reward';
 import { Ng2MapModule } from 'ng2-map';
 import { LocationTracker } from '../providers/location-tracker';
 import { CheckMarkers } from '../providers/check-markers';
@@ -27,6 +28,7 @@ import { RequestService } from './services/request.service';
     HomePage,
     RegisterPage,
     QuestPage,
+    RewardPage,
     TabsPage,
     PopoverPage,
     QuestFormPage,
@@ -45,6 +47,7 @@ import { RequestService } from './services/request.service';
     HomePage,
     RegisterPage,
     QuestPage,
+    RewardPage,
     PopoverPage,
     QuestFormPage,
     AvatarPage,
