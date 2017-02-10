@@ -19,7 +19,7 @@ export class MyApp {
   rootPage: any;
 
   constructor(platform: Platform) {
-    this.rootPage = TabsPage;
+    this.rootPage = HomePage;
     //   this.rootPage = HomePage;
     // if(localStorage["token"] == null){
     // }

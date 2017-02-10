@@ -92,8 +92,7 @@ export class AvatarPage {
 
 
   logoutUser(){
-    localStorage.removeItem("token");
-    localStorage.removeItem("markers");
+    localStorage.clear();
     this.navCtrl.push(HomePage);
   }
 }
