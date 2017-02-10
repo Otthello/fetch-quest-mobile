@@ -31,6 +31,10 @@ export class QuestFormPage {
       query: ''
     };
   }
+
+  cancelPage(){
+    this.viewCtrl.dismiss();
+  }
   dismissPage(){
     this.clicked = true;
     var data = {
