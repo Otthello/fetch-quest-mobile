@@ -1,25 +1,14 @@
+# Fetch-quest Mobile client
+******
 
+Team members: [Rich](https://github.com/rrichardsonv), [Bob](https://github.com/Robertgervais1), [Dereck](https://github.com/DMiller0090), [Vadim](https://github.com/Brandv)
+****
 
-  showInfoWindow(marker) {
-    marker.ng2MapComponent.openInfoWindow(
-      'iw',    // id of InfoWindow
-      marker,  // anchor for InfoWindow
-      {        // local variables for InfoWindow
-        lat: marker.getPosition().lat(),
-        lng: marker.getPosition().lng(),
-      }
-    );
-  }
+### Description:
 
-KEY WHICH YOU MUST NOT LOSE!!!!!!
+Ionic 2 Errand gamifier! Make your next trip to the DMV a battle with skeletons!
 
-d67cd72d34986c1d7d8a42cfb7513f07
+****
 
-auth_token
-y9sRWTJZMxrdGQV4qFAAAD9d
-
-
-username: VargouilleSupreme
-
-email: test@test.com
+Currently in the process of preparing APK for the Google Play Store
 
